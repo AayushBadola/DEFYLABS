@@ -15,30 +15,30 @@ const Home = () => {
   const services = [
     {
       title: "SEO Optimization",
-      description: "AI-powered SEO strategies that dominate search rankings",
+      description: "AI-assisted SEO strategies that dominate search rankings",
       icon: "🚀"
     },
     {
       title: "Funnel Optimization",
-      description: "Convert more visitors with data-driven funnel analysis",
+      description: "Convert more visitors with AI-powered funnel analysis",
       icon: "🎯"
     },
     {
       title: "Market Research",
-      description: "Deep competitor analysis and market intelligence",
+      description: "Deep competitor analysis with AI-enhanced insights",
       icon: "🔍"
     },
     {
-      title: "AI Marketing",
-      description: "Cutting-edge marketing powered by our custom AI",
+      title: "AI-Enhanced Marketing",
+      description: "Advanced marketing strategies powered by our custom AI",
       icon: "🤖"
     }
   ];
 
   const features = [
-    "1.8 Trillion Parameter Custom AI",
+    "1.8 Trillion Parameter Custom AI Assistant",
     "Real-time Analytics & Insights",
-    "Automated Optimization",
+    "AI-Assisted Optimization",
     "24/7 Performance Monitoring",
     "Personalized Strategy Development",
     "Competitive Intelligence"
@@ -46,34 +46,34 @@ const Home = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      <FloatingBackground variant="neural" />
+      <FloatingBackground variant="minimal" />
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 gradient-bg opacity-5"></div>
+        <div className="absolute inset-0 gradient-bg opacity-3"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8 animate-slide-down">
-            <Badge variant="secondary" className="px-4 py-2 text-sm font-medium animate-bounce-slow">
+            <Badge variant="secondary" className="px-4 py-2 text-sm font-medium">
               Powered by 1.8 Trillion Parameter AI
             </Badge>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-space font-bold text-foreground leading-tight">
               Digital Growth with
-              <span className="block ai-precision-text neural-glow animate-pulse-glow text-6xl md:text-8xl font-extrabold py-4">
+              <span className="block ai-precision-text text-6xl md:text-8xl font-extrabold py-6 my-4">
                 AI Precision
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in">
-              Revolutionize your business with our cutting-edge AI-powered solutions. 
+              Revolutionize your business with our cutting-edge AI-enhanced solutions. 
               From SEO domination to funnel optimization, we deliver results that matter.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
               <Button 
                 size="lg"
-                className="gradient-bg modern-hover px-8 py-6 text-lg"
+                className="gradient-bg modern-button-hover px-8 py-6 text-lg"
                 asChild
               >
                 <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
@@ -94,14 +94,14 @@ const Home = () => {
             </div>
           </div>
           
-          {/* Enhanced Floating Animation Elements */}
-          <div className="absolute top-1/2 right-10 w-64 h-64 bg-gradient-to-br from-sky-400/20 to-sky-600/20 rounded-full blur-3xl animate-spin-slow hidden lg:block"></div>
-          <div className="absolute top-1/4 left-10 w-48 h-48 bg-gradient-to-br from-cyan-300/15 to-cyan-500/15 rounded-full blur-2xl animate-bounce-slow hidden lg:block"></div>
+          {/* Subtle Floating Animation Elements */}
+          <div className="absolute top-1/2 right-10 w-48 h-48 bg-gradient-to-br from-sky-400/8 to-sky-600/8 rounded-full blur-3xl animate-float-gentle hidden lg:block"></div>
+          <div className="absolute top-1/4 left-10 w-32 h-32 bg-gradient-to-br from-cyan-300/6 to-cyan-500/6 rounded-full blur-2xl animate-float-gentle animation-delay-4000 hidden lg:block"></div>
         </div>
 
         {/* Enhanced Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ArrowDown className="w-6 h-6 text-sky-500 animate-pulse" />
+          <ArrowDown className="w-6 h-6 text-sky-500" />
         </div>
       </section>
 
@@ -116,7 +116,7 @@ const Home = () => {
                 className="text-center group animate-slide-right"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-sky-400 to-sky-600 rounded-2xl mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 animate-pulse-glow">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-sky-400 to-sky-600 rounded-2xl mb-4 group-hover:scale-105 transition-all duration-300">
                   <stat.icon className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-3xl md:text-4xl font-bold text-foreground">{stat.value}</div>
@@ -129,53 +129,53 @@ const Home = () => {
 
       {/* Why We're Unique Section */}
       <section className="py-20 relative">
-        <FloatingBackground variant="circuit" />
+        <FloatingBackground variant="neural" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16 animate-slide-down">
             <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6">
               Why We're <span className="ai-precision-text">Unique</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We're not just another digital agency. We're pioneers using the world's most advanced AI technology.
+              We're not just another digital agency. We're pioneers using AI to enhance our expertise and deliver superior results.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-slide-right">
               <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300">
                   <Brain className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">1.8 Trillion Parameter AI</h3>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">1.8 Trillion Parameter AI Assistant</h3>
                   <p className="text-muted-foreground">
-                    Our custom-curated AI model processes data at unprecedented scale, 
-                    delivering insights that traditional tools simply cannot match.
+                    Our custom-curated AI assists us in processing data at unprecedented scale, 
+                    helping us deliver insights that traditional methods simply cannot match.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300">
                   <Zap className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">Real-time Optimization</h3>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">AI-Enhanced Optimization</h3>
                   <p className="text-muted-foreground">
-                    Our AI continuously monitors and optimizes your campaigns, 
-                    making micro-adjustments 24/7 for maximum performance.
+                    Using AI to assist in continuously monitoring and optimizing your campaigns, 
+                    we make data-driven adjustments 24/7 for maximum performance.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300">
                   <Target className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-2">Precision Targeting</h3>
                   <p className="text-muted-foreground">
-                    Advanced pattern recognition helps us identify and target 
+                    Advanced AI-assisted pattern recognition helps us identify and target 
                     your ideal customers with surgical precision.
                   </p>
                 </div>
@@ -198,14 +198,14 @@ const Home = () => {
 
       {/* Services Preview */}
       <section className="py-20 bg-gray-50 dark:bg-gray-900 relative">
-        <FloatingBackground variant="default" />
+        <FloatingBackground variant="circuit" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6">
               Our <span className="ai-precision-text">Services</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive digital solutions powered by cutting-edge AI technology
+              Comprehensive digital solutions enhanced by cutting-edge AI technology
             </p>
           </div>
 
@@ -213,11 +213,11 @@ const Home = () => {
             {services.map((service, index) => (
               <Card 
                 key={service.title} 
-                className="group hover:shadow-xl hover:shadow-sky-500/10 transition-all duration-500 transform hover:-translate-y-4 hover:rotate-1 animate-scale-in border-0 bg-white dark:bg-gray-800"
+                className="group service-card-hover transition-all duration-500 border-0 bg-white dark:bg-gray-800"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <CardContent className="p-8 text-center">
-                  <div className="text-4xl mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">{service.icon}</div>
+                  <div className="text-4xl mb-6 group-hover:scale-110 transition-all duration-300">{service.icon}</div>
                   <h3 className="text-xl font-semibold text-foreground mb-4 group-hover:text-sky-500 transition-colors">
                     {service.title}
                   </h3>
@@ -246,6 +246,7 @@ const Home = () => {
 
       {/* Features */}
       <section className="py-20 relative">
+        <FloatingBackground variant="minimal" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-slide-down">
             <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6">
@@ -270,19 +271,19 @@ const Home = () => {
 
       {/* CTA Section */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 gradient-bg opacity-10"></div>
-        <FloatingBackground variant="neural" />
+        <div className="absolute inset-0 gradient-bg opacity-5"></div>
+        <FloatingBackground variant="default" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6 animate-slide-down">
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 animate-fade-in">
-            Join hundreds of businesses that have revolutionized their growth with our AI-powered solutions.
+            Join hundreds of businesses that have revolutionized their growth with our AI-enhanced solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
             <Button 
               size="lg"
-              className="gradient-bg modern-hover px-8 py-6 text-lg"
+              className="gradient-bg modern-button-hover px-8 py-6 text-lg"
               asChild
             >
               <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
