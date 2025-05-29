@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
   Search, 
@@ -10,9 +10,10 @@ import {
   Users, 
   Zap, 
   Brain,
-  Eye,
-  CheckCircle
+  Eye
 } from "lucide-react";
+import ServiceCard from "@/components/ServiceCard";
+import FloatingBackground from "@/components/FloatingBackground";
 
 const Services = () => {
   const services = [
@@ -22,13 +23,28 @@ const Services = () => {
       icon: Search,
       features: [
         "AI-driven keyword research",
-        "Technical SEO audits",
+        "Technical SEO audits", 
         "Content optimization",
         "Competitor analysis",
         "Performance tracking",
-        "Local SEO optimization"
+        "Local SEO optimization",
+        "Schema markup implementation",
+        "Site speed optimization"
       ],
-      pricing: "Starting from $2,500/month",
+      benefits: [
+        "Increase organic traffic by 200-400%",
+        "Improve search rankings significantly",
+        "Drive qualified leads consistently",
+        "Boost brand visibility online"
+      ],
+      process: [
+        "Comprehensive SEO audit and analysis",
+        "Custom strategy development",
+        "On-page optimization implementation", 
+        "Content creation and optimization",
+        "Technical SEO improvements",
+        "Ongoing monitoring and adjustments"
+      ],
       gradient: "from-green-400 to-green-600"
     },
     {
@@ -41,9 +57,23 @@ const Services = () => {
         "User behavior tracking",
         "Landing page optimization",
         "Customer journey mapping",
-        "Revenue optimization"
+        "Revenue optimization",
+        "Cart abandonment reduction",
+        "Lead nurturing sequences"
       ],
-      pricing: "Starting from $3,000/month",
+      benefits: [
+        "Increase conversion rates by 150-300%",
+        "Reduce customer acquisition costs",
+        "Maximize revenue per visitor",
+        "Improve customer lifetime value"
+      ],
+      process: [
+        "Funnel analysis and identification of bottlenecks",
+        "User behavior and heatmap analysis",
+        "A/B testing strategy development",
+        "Optimization implementation",
+        "Performance monitoring and iteration"
+      ],
       gradient: "from-blue-400 to-blue-600"
     },
     {
@@ -56,9 +86,23 @@ const Services = () => {
         "Strategy identification",
         "Weakness discovery",
         "Opportunity mapping",
-        "Performance benchmarking"
+        "Performance benchmarking",
+        "Content gap analysis",
+        "Pricing strategy insights"
       ],
-      pricing: "Starting from $1,500/month",
+      benefits: [
+        "Identify market opportunities",
+        "Stay ahead of competition",
+        "Optimize pricing strategies",
+        "Discover content gaps to exploit"
+      ],
+      process: [
+        "Competitor identification and mapping",
+        "Deep analysis of strategies and tactics",
+        "Performance benchmarking",
+        "Opportunity identification",
+        "Strategic recommendations"
+      ],
       gradient: "from-red-400 to-red-600"
     },
     {
@@ -71,9 +115,23 @@ const Services = () => {
         "Predictive analytics",
         "Automated optimization",
         "Customer segmentation",
-        "Performance prediction"
+        "Performance prediction",
+        "Dynamic content generation",
+        "Smart bidding strategies"
       ],
-      pricing: "Starting from $4,000/month",
+      benefits: [
+        "Achieve 300%+ ROI on campaigns",
+        "Reduce marketing spend waste",
+        "Increase customer engagement",
+        "Scale personalization effortlessly"
+      ],
+      process: [
+        "AI model training on your data",
+        "Campaign strategy development",
+        "Automated campaign deployment",
+        "Real-time optimization",
+        "Performance analysis and scaling"
+      ],
       gradient: "from-purple-400 to-purple-600"
     },
     {
@@ -86,9 +144,23 @@ const Services = () => {
         "Behavioral analysis",
         "Market opportunity assessment",
         "Trend identification",
-        "Competitive landscape mapping"
+        "Competitive landscape mapping",
+        "Consumer survey design",
+        "Focus group analysis"
       ],
-      pricing: "Starting from $2,000/month",
+      benefits: [
+        "Identify high-value customer segments",
+        "Improve product-market fit",
+        "Optimize marketing messages",
+        "Reduce customer acquisition costs"
+      ],
+      process: [
+        "Market landscape analysis",
+        "Customer research and surveys",
+        "Data analysis and insights",
+        "Persona development",
+        "Strategy recommendations"
+      ],
       gradient: "from-orange-400 to-orange-600"
     },
     {
@@ -101,9 +173,23 @@ const Services = () => {
         "ROI measurement",
         "Performance insights",
         "Automated reporting",
-        "Predictive forecasting"
+        "Predictive forecasting",
+        "Attribution modeling",
+        "Cross-channel analysis"
       ],
-      pricing: "Starting from $1,800/month",
+      benefits: [
+        "Make informed business decisions",
+        "Track ROI accurately",
+        "Identify growth opportunities",
+        "Optimize resource allocation"
+      ],
+      process: [
+        "Analytics setup and configuration",
+        "Custom dashboard development",
+        "KPI definition and tracking",
+        "Regular reporting and insights",
+        "Strategic recommendations"
+      ],
       gradient: "from-sky-400 to-sky-600"
     }
   ];
@@ -132,17 +218,19 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 relative overflow-hidden">
+      <FloatingBackground variant="data" />
+      
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 gradient-bg opacity-5"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge variant="secondary" className="px-4 py-2 mb-6 animate-fade-in">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+          <Badge variant="secondary" className="px-4 py-2 mb-6 animate-bounce-slow">
             AI-Powered Solutions
           </Badge>
           
-          <h1 className="text-4xl md:text-6xl font-space font-bold text-foreground mb-6 animate-fade-in">
-            Our <span className="bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text text-transparent">Services</span>
+          <h1 className="text-4xl md:text-6xl font-space font-bold text-foreground mb-6 animate-slide-down">
+            Our <span className="ai-precision-text">Services</span>
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in">
@@ -151,7 +239,7 @@ const Services = () => {
 
           <Button 
             size="lg"
-            className="gradient-bg hover:shadow-xl hover:shadow-sky-500/25 transform hover:scale-105 transition-all duration-300 px-8 py-6 animate-scale-in"
+            className="gradient-bg hover:shadow-xl hover:shadow-sky-500/25 transform hover:scale-105 transition-all duration-300 px-8 py-6 animate-pulse-glow"
             asChild
           >
             <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
@@ -162,67 +250,34 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gray-50 dark:bg-gray-900 relative">
+        <FloatingBackground variant="circuit" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card 
+              <ServiceCard
                 key={service.title}
-                className="group hover:shadow-2xl hover:shadow-sky-500/10 transition-all duration-500 transform hover:-translate-y-3 border-0 overflow-hidden animate-scale-in"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <CardHeader className="relative pb-0">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <service.icon className="w-8 h-8 text-white" />
-                  </div>
-                  
-                  <CardTitle className="text-xl font-bold text-foreground group-hover:text-sky-500 transition-colors duration-300">
-                    {service.title}
-                  </CardTitle>
-                  
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                </CardHeader>
-
-                <CardContent className="pt-6">
-                  <div className="space-y-3 mb-6">
-                    {service.features.map((feature, idx) => (
-                      <div key={feature} className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="border-t pt-4">
-                    <Badge variant="outline" className="mb-4">
-                      {service.pricing}
-                    </Badge>
-                    
-                    <Button 
-                      size="sm" 
-                      className="w-full gradient-bg hover:shadow-lg hover:shadow-sky-500/25"
-                      asChild
-                    >
-                      <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
-                        Learn More
-                      </a>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+                title={service.title}
+                description={service.description}
+                icon={service.icon}
+                features={service.features}
+                benefits={service.benefits}
+                process={service.process}
+                gradient={service.gradient}
+                delay={index * 150}
+              />
             ))}
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in">
+      <section className="py-20 relative">
+        <FloatingBackground variant="neural" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-16 animate-slide-down">
             <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6">
-              Our <span className="bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text text-transparent">Process</span>
+              Our <span className="ai-precision-text">Process</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               A proven methodology that delivers exceptional results for every client.
@@ -237,7 +292,7 @@ const Services = () => {
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="relative mb-8">
-                  <div className="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 animate-pulse-glow">
                     <span className="text-2xl font-bold text-white">{step.step}</span>
                   </div>
                   
@@ -260,18 +315,18 @@ const Services = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-20 bg-gray-50 dark:bg-gray-900 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-16 animate-slide-down">
             <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6">
-              Why Choose <span className="bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text text-transparent">ProNarrative</span>
+              Why Choose <span className="ai-precision-text">ProNarrative</span>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 animate-scale-in">
+            <Card className="group hover:shadow-xl transition-all duration-500 border-0 animate-slide-right hover:scale-105 hover:-rotate-1">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
                   <Brain className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-4">AI-Powered Intelligence</h3>
@@ -281,9 +336,9 @@ const Services = () => {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 animate-scale-in" style={{ animationDelay: '200ms' }}>
+            <Card className="group hover:shadow-xl transition-all duration-500 border-0 animate-scale-in hover:scale-105" style={{ animationDelay: '200ms' }}>
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
                   <Users className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-4">Proven Results</h3>
@@ -293,9 +348,9 @@ const Services = () => {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 animate-scale-in" style={{ animationDelay: '400ms' }}>
+            <Card className="group hover:shadow-xl transition-all duration-500 border-0 animate-slide-left hover:scale-105 hover:rotate-1" style={{ animationDelay: '400ms' }}>
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-4">24/7 Optimization</h3>
@@ -311,17 +366,18 @@ const Services = () => {
       {/* CTA Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 gradient-bg opacity-10"></div>
+        <FloatingBackground variant="default" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6 animate-fade-in">
+          <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6 animate-slide-down">
             Ready to Accelerate Your Growth?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 animate-fade-in">
             Join hundreds of businesses that have transformed their results with our AI-powered solutions.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
             <Button 
               size="lg"
-              className="gradient-bg hover:shadow-xl hover:shadow-sky-500/25 transform hover:scale-105 transition-all duration-300 px-8 py-6"
+              className="gradient-bg hover:shadow-xl hover:shadow-sky-500/25 transform hover:scale-105 transition-all duration-300 px-8 py-6 animate-pulse-glow"
               asChild
             >
               <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
@@ -331,7 +387,7 @@ const Services = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950 px-8 py-6"
+              className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950 px-8 py-6 hover:scale-105 transition-all duration-300"
               asChild
             >
               <a href="/contact">
