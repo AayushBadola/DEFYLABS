@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -46,11 +47,11 @@ const Home = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      <FloatingBackground variant="minimal" />
+      <FloatingBackground variant="neural" />
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 gradient-bg opacity-3"></div>
+        <div className="absolute inset-0 gradient-bg opacity-5"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8 animate-slide-down">
@@ -60,7 +61,7 @@ const Home = () => {
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-space font-bold text-foreground leading-tight">
               Digital Growth with
-              <span className="block ai-precision-text text-6xl md:text-8xl font-extrabold py-6 my-4">
+              <span className="block ai-precision-text smooth-glow text-6xl md:text-8xl font-extrabold py-6 my-4">
                 AI Precision
               </span>
             </h1>
@@ -73,7 +74,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
               <Button 
                 size="lg"
-                className="gradient-bg modern-button-hover px-8 py-6 text-lg"
+                className="gradient-bg modern-hover px-8 py-6 text-lg"
                 asChild
               >
                 <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
@@ -94,9 +95,9 @@ const Home = () => {
             </div>
           </div>
           
-          {/* Subtle Floating Animation Elements */}
-          <div className="absolute top-1/2 right-10 w-48 h-48 bg-gradient-to-br from-sky-400/8 to-sky-600/8 rounded-full blur-3xl animate-float-gentle hidden lg:block"></div>
-          <div className="absolute top-1/4 left-10 w-32 h-32 bg-gradient-to-br from-cyan-300/6 to-cyan-500/6 rounded-full blur-2xl animate-float-gentle animation-delay-4000 hidden lg:block"></div>
+          {/* Enhanced Floating Animation Elements */}
+          <div className="absolute top-1/2 right-10 w-64 h-64 bg-gradient-to-br from-sky-400/20 to-sky-600/20 rounded-full blur-3xl animate-spin-slow hidden lg:block"></div>
+          <div className="absolute top-1/4 left-10 w-48 h-48 bg-gradient-to-br from-cyan-300/15 to-cyan-500/15 rounded-full blur-2xl animate-bounce-slow hidden lg:block"></div>
         </div>
 
         {/* Enhanced Scroll Indicator */}
@@ -129,7 +130,7 @@ const Home = () => {
 
       {/* Why We're Unique Section */}
       <section className="py-20 relative">
-        <FloatingBackground variant="neural" />
+        <FloatingBackground variant="circuit" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16 animate-slide-down">
             <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6">
@@ -198,7 +199,7 @@ const Home = () => {
 
       {/* Services Preview */}
       <section className="py-20 bg-gray-50 dark:bg-gray-900 relative">
-        <FloatingBackground variant="circuit" />
+        <FloatingBackground variant="default" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6">
@@ -246,7 +247,6 @@ const Home = () => {
 
       {/* Features */}
       <section className="py-20 relative">
-        <FloatingBackground variant="minimal" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-slide-down">
             <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6">
@@ -271,8 +271,8 @@ const Home = () => {
 
       {/* CTA Section */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 gradient-bg opacity-5"></div>
-        <FloatingBackground variant="default" />
+        <div className="absolute inset-0 gradient-bg opacity-10"></div>
+        <FloatingBackground variant="neural" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6 animate-slide-down">
             Ready to Transform Your Business?
@@ -283,7 +283,7 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
             <Button 
               size="lg"
-              className="gradient-bg modern-button-hover px-8 py-6 text-lg"
+              className="gradient-bg modern-hover px-8 py-6 text-lg"
               asChild
             >
               <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
