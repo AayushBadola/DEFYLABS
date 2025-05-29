@@ -39,19 +39,13 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="transform group-hover:scale-105 transition-transform duration-300">
-              <img 
-                src="/lovable-uploads/ae781898-245f-4ffb-b4c0-1d4dd696fcfb.png" 
-                alt="ProNarrative Logo" 
-                className="h-10 w-auto dark:hidden"
-              />
-              <img 
-                src="/lovable-uploads/5a0ce522-32ea-4dcd-a78d-f2cbb619c65c.png" 
-                alt="ProNarrative Logo" 
-                className="h-10 w-auto hidden dark:block"
-              />
+          <Link to="/" className="flex items-center space-x-2 group">
+            <div className="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+              <span className="text-white font-bold text-xl">P</span>
             </div>
+            <span className="text-2xl font-space font-bold bg-gradient-to-r from-sky-500 to-sky-700 bg-clip-text text-transparent">
+              ProNarrative
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -90,7 +84,7 @@ const Navbar = () => {
             {/* CTA Button */}
             <Button 
               asChild
-              className="gradient-bg modern-button-hover transition-all duration-300"
+              className="gradient-bg hover:shadow-lg hover:shadow-sky-500/25 transform hover:scale-105 transition-all duration-300"
             >
               <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
                 Book Meeting
@@ -143,7 +137,7 @@ const Navbar = () => {
               ))}
               <Button 
                 asChild
-                className="w-full gradient-bg modern-button-hover"
+                className="w-full gradient-bg hover:shadow-lg hover:shadow-sky-500/25"
               >
                 <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
                   Book Meeting
