@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -74,7 +73,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
               <Button 
                 size="lg"
-                className="gradient-bg hover:shadow-xl hover:shadow-sky-500/25 transform hover:scale-105 transition-all duration-300 px-8 py-6 text-lg animate-pulse-glow"
+                className="gradient-bg modern-hover px-8 py-6 text-lg"
                 asChild
               >
                 <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
@@ -85,7 +84,7 @@ const Home = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950 px-8 py-6 text-lg hover:scale-105 transition-all duration-300"
+                className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950 px-8 py-6 text-lg outline-hover"
                 asChild
               >
                 <a href="/services">
@@ -234,7 +233,7 @@ const Home = () => {
             <Button 
               size="lg"
               variant="outline"
-              className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950 px-8 py-6 hover:scale-105 transition-all duration-300"
+              className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950 px-8 py-6 outline-hover"
               asChild
             >
               <a href="/services">
@@ -283,7 +282,7 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
             <Button 
               size="lg"
-              className="gradient-bg hover:shadow-xl hover:shadow-sky-500/25 transform hover:scale-105 transition-all duration-300 px-8 py-6 text-lg animate-pulse-glow"
+              className="gradient-bg modern-hover px-8 py-6 text-lg"
               asChild
             >
               <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
@@ -293,7 +292,7 @@ const Home = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950 px-8 py-6 text-lg hover:scale-105 transition-all duration-300"
+              className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950 px-8 py-6 text-lg outline-hover"
               asChild
             >
               <a href="/contact">
