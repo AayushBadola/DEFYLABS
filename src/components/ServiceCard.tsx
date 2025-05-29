@@ -30,12 +30,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
   return (
     <Card 
-      className="group hover:shadow-2xl hover:shadow-sky-500/10 transition-all duration-700 transform hover:-translate-y-4 border-0 overflow-hidden animate-scale-in cursor-pointer"
+      className="group service-card-hover transition-all duration-700 border-0 overflow-hidden animate-scale-in cursor-pointer"
       style={{ animationDelay: `${delay}ms` }}
       onClick={() => setIsExpanded(!isExpanded)}
     >
       <CardHeader className="relative pb-0">
-        <div className={`w-16 h-16 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+        <div className={`w-16 h-16 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-all duration-300`}>
           <Icon className="w-8 h-8 text-white" />
         </div>
         
@@ -106,13 +106,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         )}
 
         <div className="border-t pt-4 mt-6">
-          <Badge variant="outline" className="mb-4 animate-pulse">
+          <Badge variant="outline" className="mb-4">
             Custom Pricing Based on Your Needs
           </Badge>
           
           <Button 
             size="sm" 
-            className="w-full gradient-bg hover:shadow-lg hover:shadow-sky-500/25 transform hover:scale-105 transition-all duration-300"
+            className="w-full gradient-bg modern-hover transition-all duration-300"
             asChild
           >
             <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">

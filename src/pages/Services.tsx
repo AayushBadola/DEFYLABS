@@ -19,10 +19,10 @@ const Services = () => {
   const services = [
     {
       title: "SEO Optimization",
-      description: "Dominate search rankings with AI-powered SEO strategies that drive organic traffic and boost visibility.",
+      description: "Dominate search rankings with AI-assisted SEO strategies that drive organic traffic and boost visibility.",
       icon: Search,
       features: [
-        "AI-driven keyword research",
+        "AI-assisted keyword research",
         "Technical SEO audits", 
         "Content optimization",
         "Competitor analysis",
@@ -39,7 +39,7 @@ const Services = () => {
       ],
       process: [
         "Comprehensive SEO audit and analysis",
-        "Custom strategy development",
+        "AI-assisted strategy development",
         "On-page optimization implementation", 
         "Content creation and optimization",
         "Technical SEO improvements",
@@ -49,7 +49,7 @@ const Services = () => {
     },
     {
       title: "Funnel Optimization",
-      description: "Convert more visitors into customers with data-driven funnel analysis and optimization strategies.",
+      description: "Convert more visitors into customers with AI-enhanced funnel analysis and optimization strategies.",
       icon: TrendingUp,
       features: [
         "Conversion rate analysis",
@@ -70,7 +70,7 @@ const Services = () => {
       process: [
         "Funnel analysis and identification of bottlenecks",
         "User behavior and heatmap analysis",
-        "A/B testing strategy development",
+        "AI-assisted testing strategy development",
         "Optimization implementation",
         "Performance monitoring and iteration"
       ],
@@ -78,7 +78,7 @@ const Services = () => {
     },
     {
       title: "Competitor Investigation",
-      description: "Gain competitive advantages through deep analysis of your opponents' strategies and weaknesses.",
+      description: "Gain competitive advantages through AI-enhanced analysis of your opponents' strategies and weaknesses.",
       icon: Eye,
       features: [
         "Competitive intelligence",
@@ -106,11 +106,11 @@ const Services = () => {
       gradient: "from-red-400 to-red-600"
     },
     {
-      title: "AI Marketing",
+      title: "AI-Enhanced Marketing",
       description: "Leverage our 1.8 trillion parameter AI for personalized marketing campaigns that deliver results.",
       icon: Brain,
       features: [
-        "AI-powered campaigns",
+        "AI-assisted campaigns",
         "Personalization at scale",
         "Predictive analytics",
         "Automated optimization",
@@ -136,7 +136,7 @@ const Services = () => {
     },
     {
       title: "Target Market Research",
-      description: "Identify and understand your ideal customers with comprehensive market research and analysis.",
+      description: "Identify and understand your ideal customers with comprehensive AI-assisted market research and analysis.",
       icon: Target,
       features: [
         "Market segmentation",
@@ -165,7 +165,7 @@ const Services = () => {
     },
     {
       title: "Performance Analytics",
-      description: "Make data-driven decisions with comprehensive analytics and reporting dashboards.",
+      description: "Make data-driven decisions with comprehensive analytics and AI-powered reporting dashboards.",
       icon: BarChart3,
       features: [
         "Real-time dashboards",
@@ -202,8 +202,8 @@ const Services = () => {
     },
     {
       step: "02", 
-      title: "AI-Powered Strategy",
-      description: "Our 1.8T parameter AI develops a comprehensive plan tailored to your specific needs."
+      title: "AI-Enhanced Strategy",
+      description: "Our 1.8T parameter AI assists us in developing a comprehensive plan tailored to your specific needs."
     },
     {
       step: "03",
@@ -213,7 +213,7 @@ const Services = () => {
     {
       step: "04",
       title: "Optimization & Growth",
-      description: "Continuous monitoring and optimization ensure sustainable growth and maximum ROI."
+      description: "Continuous monitoring and AI-assisted optimization ensure sustainable growth and maximum ROI."
     }
   ];
 
@@ -225,8 +225,8 @@ const Services = () => {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 gradient-bg opacity-5"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <Badge variant="secondary" className="px-4 py-2 mb-6 animate-bounce-slow">
-            AI-Powered Solutions
+          <Badge variant="secondary" className="px-4 py-2 mb-6">
+            AI-Enhanced Solutions
           </Badge>
           
           <h1 className="text-4xl md:text-6xl font-space font-bold text-foreground mb-6 animate-slide-down">
@@ -234,12 +234,12 @@ const Services = () => {
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in">
-            Comprehensive digital solutions powered by cutting-edge AI technology to accelerate your business growth.
+            Comprehensive digital solutions enhanced by cutting-edge AI technology to accelerate your business growth.
           </p>
 
           <Button 
             size="lg"
-            className="gradient-bg hover:shadow-xl hover:shadow-sky-500/25 transform hover:scale-105 transition-all duration-300 px-8 py-6 animate-pulse-glow"
+            className="gradient-bg modern-hover px-8 py-6"
             asChild
           >
             <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
@@ -292,7 +292,7 @@ const Services = () => {
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="relative mb-8">
-                  <div className="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 animate-pulse-glow">
+                  <div className="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto group-hover:scale-105 transition-all duration-300 smooth-glow">
                     <span className="text-2xl font-bold text-white">{step.step}</span>
                   </div>
                   
@@ -324,21 +324,21 @@ const Services = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-xl transition-all duration-500 border-0 animate-slide-right hover:scale-105 hover:-rotate-1">
+            <Card className="group service-card-hover transition-all duration-500 border-0 animate-slide-right">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
                   <Brain className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-4">AI-Powered Intelligence</h3>
+                <h3 className="text-xl font-bold text-foreground mb-4">AI-Enhanced Intelligence</h3>
                 <p className="text-muted-foreground">
-                  Our 1.8 trillion parameter AI provides insights and optimizations impossible with traditional methods.
+                  Our 1.8 trillion parameter AI assists us in providing insights and optimizations impossible with traditional methods.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-500 border-0 animate-scale-in hover:scale-105" style={{ animationDelay: '200ms' }}>
+            <Card className="group service-card-hover transition-all duration-500 border-0 animate-scale-in" style={{ animationDelay: '200ms' }}>
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
                   <Users className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-4">Proven Results</h3>
@@ -348,9 +348,9 @@ const Services = () => {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-500 border-0 animate-slide-left hover:scale-105 hover:rotate-1" style={{ animationDelay: '400ms' }}>
+            <Card className="group service-card-hover transition-all duration-500 border-0 animate-slide-left" style={{ animationDelay: '400ms' }}>
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-4">24/7 Optimization</h3>
@@ -372,12 +372,12 @@ const Services = () => {
             Ready to Accelerate Your Growth?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 animate-fade-in">
-            Join hundreds of businesses that have transformed their results with our AI-powered solutions.
+            Join hundreds of businesses that have transformed their results with our AI-enhanced solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
             <Button 
               size="lg"
-              className="gradient-bg hover:shadow-xl hover:shadow-sky-500/25 transform hover:scale-105 transition-all duration-300 px-8 py-6 animate-pulse-glow"
+              className="gradient-bg modern-hover px-8 py-6"
               asChild
             >
               <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
@@ -387,7 +387,7 @@ const Services = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950 px-8 py-6 hover:scale-105 transition-all duration-300"
+              className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950 px-8 py-6 outline-hover"
               asChild
             >
               <a href="/contact">
