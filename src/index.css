@@ -194,7 +194,7 @@
     }
   }
 
-  /* Service Card Hover Animation */
+  /* Service Card Hover Animation with Tilt */
   .service-card-hover {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform-style: preserve-3d;
@@ -208,6 +208,10 @@
   }
 
   /* Updated Gradients */
+  .gradient-bg {
+    background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 50%, #6366f1 100%);
+  }
+  
   .defy-gradient {
     background: linear-gradient(135deg, #a855f7 0%, #c084fc 50%, #e879f9 100%);
   }
@@ -233,7 +237,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradient-flow-smooth 6s ease-in-out infinite;
+    animation: gradient-flow-smooth 6s ease-in-out infinite, float-gentle 4s ease-in-out infinite;
     padding: 1rem 2rem;
     border-radius: 2rem;
     position: relative;
@@ -265,6 +269,15 @@
   /* Floating Badge Animation */
   .floating-badge {
     animation: float-gentle 4s ease-in-out infinite;
+  }
+
+  /* Floating text animations */
+  .floating-founder {
+    animation: float-gentle 5s ease-in-out infinite;
+  }
+
+  .floating-connect {
+    animation: float-gentle 6s ease-in-out infinite 1s;
   }
 
   /* Modern Button Hover Effects */
@@ -355,6 +368,7 @@
     }
     to {
       opacity: 1;
+      transform: translateY(0);
     }
   }
 

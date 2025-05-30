@@ -12,7 +12,8 @@ const ProjectsSection = () => {
       image: "/lovable-uploads/e36ce433-650a-404c-a230-1eac896327d7.png",
       icon: Brain,
       tags: ["AI/ML", "Healthcare", "Neural Networks"],
-      color: "from-red-400 to-pink-600"
+      color: "from-red-400 to-pink-600",
+      link: "https://github.com/AayushBadola/BrainCancerClassifier"
     },
     {
       title: "Fetal Development Monitor",
@@ -20,7 +21,8 @@ const ProjectsSection = () => {
       image: "/lovable-uploads/e3f74d56-a8ab-4ebb-b684-685b6ad7b641.png",
       icon: Baby,
       tags: ["Healthcare", "Monitoring", "Predictive Analytics"],
-      color: "from-pink-400 to-purple-600"
+      color: "from-pink-400 to-purple-600",
+      link: "https://github.com/AayushBadola/FetusHealth"
     },
     {
       title: "Exoplanet Discovery",
@@ -28,7 +30,8 @@ const ProjectsSection = () => {
       image: "/lovable-uploads/3cd5938c-5a92-4f55-b8eb-9b7885d98182.png",
       icon: Globe,
       tags: ["Space Tech", "Discovery", "Machine Learning"],
-      color: "from-blue-400 to-indigo-600"
+      color: "from-blue-400 to-indigo-600",
+      link: "https://github.com/AayushBadola/Exo-Planet-Detection"
     }
   ];
 
@@ -86,9 +89,12 @@ const ProjectsSection = () => {
                   size="sm" 
                   variant="outline"
                   className="w-full group-hover:bg-purple-50 dark:group-hover:bg-purple-950 transition-colors"
+                  asChild
                 >
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  View Project
+                  <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Project
+                  </a>
                 </Button>
               </CardContent>
             </Card>

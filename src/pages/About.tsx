@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -24,22 +23,25 @@ const About = () => {
 
   const projects = [
     {
-      title: "Brain Cancer Classification",
+      title: "Cancer Classifier",
       description: "Convolutional Neural Network (CNN) built with TensorFlow/Keras to classify brain MRI images into Glioma, Meningioma, and a general Tumor category. Based on Brain Cancer Dataset",
       tech: "TensorFlow, Keras, CNN, Medical Imaging",
-      icon: Brain
+      icon: Brain,
+      link: "https://github.com/AayushBadola/BrainCancerClassifier"
     },
     {
-      title: "Fetal Health Prediction",
+      title: "Fetal Development Monitor",
       description: "Fetal Health Classification via custom Deep Learning (CNN-Transformer). Features Optuna HPO, AdamW, label smoothing, and GPU-accelerated training pipeline for high-accuracy CTG analysis.",
       tech: "CNN-Transformer, Optuna, AdamW, Python",
-      icon: Target
+      icon: Target,
+      link: "https://github.com/AayushBadola/FetusHealth"
     },
     {
-      title: "Exoplanet Detection",
+      title: "Exoplanet Discovery",
       description: "Machine learning pipeline for detecting exoplanets from Kepler Space Telescope data. Implements data preprocessing, model training (Random Forest), evaluation, and prediction, using Hydra for configuration and MLflow for experiment tracking",
       tech: "Random Forest, Hydra, MLflow, Space Data",
-      icon: Code
+      icon: Code,
+      link: "https://github.com/AayushBadola/Exo-Planet-Detection"
     }
   ];
 
@@ -61,7 +63,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-in">
-              <Badge variant="secondary" className="px-4 py-2">
+              <Badge variant="secondary" className="px-4 py-2 floating-founder">
                 Founder & AI Visionary
               </Badge>
               
@@ -170,8 +172,9 @@ const About = () => {
             {projects.map((project, index) => (
               <Card 
                 key={project.title}
-                className="group hover:shadow-xl hover:shadow-sky-500/10 transition-all duration-300 transform hover:-translate-y-2 border-0 animate-scale-in"
+                className="group hover:shadow-xl hover:shadow-sky-500/10 transition-all duration-300 transform hover:-translate-y-2 border-0 animate-scale-in cursor-pointer"
                 style={{ animationDelay: `${index * 150}ms` }}
+                onClick={() => window.open(project.link, '_blank')}
               >
                 <CardContent className="p-8">
                   <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -295,7 +298,7 @@ const About = () => {
         <div className="absolute inset-0 gradient-bg opacity-10"></div>
         <FloatingBackground variant="default" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6 animate-fade-in">
+          <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6 animate-fade-in floating-connect">
             Ready to Work Together?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 animate-fade-in">
