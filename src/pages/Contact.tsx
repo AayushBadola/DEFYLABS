@@ -109,7 +109,7 @@ const Contact = () => {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 gradient-bg opacity-5"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge variant="secondary" className="px-4 py-2 mb-6 animate-fade-in">
+          <Badge variant="secondary" className="px-4 py-2 mb-6 animate-fade-in floating-connect-special">
             Let's Connect
           </Badge>
           
@@ -118,7 +118,7 @@ const Contact = () => {
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in">
-            Ready to transform your business with AI-powered solutions? Let's discuss your project and explore how we can achieve exceptional results together.
+            Ready to transform your business with AI-powered solutions? Let's discuss your Evolution business and explore how we can achieve exceptional results together.
           </p>
         </div>
       </section>
