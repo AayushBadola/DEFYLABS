@@ -403,7 +403,7 @@ const Services = () => {
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-4">Proven Results</h3>
                 <p className="text-muted-foreground">
-                  200+ successful projects with an average growth rate of 340% for our clients.
+                  Multiple successful projects with an average growth rate of 70% for our clients.
                 </p>
               </CardContent>
             </Card>
