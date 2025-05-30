@@ -10,7 +10,9 @@ import {
   Users, 
   Zap, 
   Brain,
-  Eye
+  Eye,
+  Layout,
+  Calendar
 } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import FloatingBackground from "@/components/FloatingBackground";
@@ -77,6 +79,35 @@ const Services = () => {
       gradient: "from-blue-400 to-blue-600"
     },
     {
+      title: "Landing Page Optimization",
+      description: "Create high-converting landing pages with AI-assisted design and optimization strategies.",
+      icon: Layout,
+      features: [
+        "AI-powered design optimization",
+        "Copy optimization and testing",
+        "Visual hierarchy improvement",
+        "Mobile responsiveness",
+        "Load speed optimization",
+        "CTA placement optimization",
+        "Form optimization",
+        "Trust signal implementation"
+      ],
+      benefits: [
+        "Increase conversion rates by 200-500%",
+        "Reduce bounce rates significantly",
+        "Improve user engagement",
+        "Maximize campaign ROI"
+      ],
+      process: [
+        "Current page analysis and audit",
+        "AI-assisted design recommendations",
+        "A/B testing implementation",
+        "Performance optimization",
+        "Continuous monitoring and improvements"
+      ],
+      gradient: "from-teal-400 to-teal-600"
+    },
+    {
       title: "Competitor Investigation",
       description: "Gain competitive advantages through AI-enhanced analysis of your opponents' strategies and weaknesses.",
       icon: Eye,
@@ -104,6 +135,35 @@ const Services = () => {
         "Strategic recommendations"
       ],
       gradient: "from-red-400 to-red-600"
+    },
+    {
+      title: "Future Planning",
+      description: "Strategic business planning with AI-powered market forecasting and trend analysis for long-term success.",
+      icon: Calendar,
+      features: [
+        "Market trend forecasting",
+        "Business growth modeling",
+        "Strategic roadmap development",
+        "Risk assessment and mitigation",
+        "Resource allocation planning",
+        "Technology adoption strategies",
+        "Competitive positioning",
+        "ROI projections"
+      ],
+      benefits: [
+        "Anticipate market changes",
+        "Make informed strategic decisions",
+        "Minimize business risks",
+        "Maximize growth opportunities"
+      ],
+      process: [
+        "Current business assessment",
+        "Market trend analysis with AI",
+        "Strategic planning sessions",
+        "Roadmap development",
+        "Implementation guidance"
+      ],
+      gradient: "from-indigo-400 to-indigo-600"
     },
     {
       title: "AI-Enhanced Marketing",
@@ -223,13 +283,13 @@ const Services = () => {
       
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 gradient-bg opacity-5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-pink-50/50 dark:from-purple-950/30 dark:to-pink-950/30"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <Badge variant="secondary" className="px-4 py-2 mb-6">
+          <Badge variant="secondary" className="px-4 py-2 mb-6 floating-badge">
             AI-Enhanced Solutions
           </Badge>
           
-          <h1 className="text-4xl md:text-6xl font-space font-bold text-foreground mb-6 animate-slide-down">
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 animate-slide-down">
             Our <span className="ai-precision-text">Services</span>
           </h1>
           
@@ -239,7 +299,7 @@ const Services = () => {
 
           <Button 
             size="lg"
-            className="gradient-bg modern-hover px-8 py-6"
+            className="defy-gradient modern-button-hover px-8 py-6"
             asChild
           >
             <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
@@ -250,7 +310,7 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900 relative">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50/50 dark:from-gray-900 dark:to-purple-950/30 relative">
         <FloatingBackground variant="circuit" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -276,7 +336,7 @@ const Services = () => {
         <FloatingBackground variant="neural" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16 animate-slide-down">
-            <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
               Our <span className="ai-precision-text">Process</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -288,20 +348,20 @@ const Services = () => {
             {processSteps.map((step, index) => (
               <div 
                 key={step.step}
-                className="text-center group animate-slide-up"
+                className="text-center group animate-scale-in floating-orb"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="relative mb-8">
-                  <div className="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto group-hover:scale-105 transition-all duration-300 smooth-glow">
+                  <div className="w-20 h-20 defy-gradient rounded-full flex items-center justify-center mx-auto group-hover:scale-105 transition-all duration-300">
                     <span className="text-2xl font-bold text-white">{step.step}</span>
                   </div>
                   
                   {index < processSteps.length - 1 && (
-                    <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-sky-300 to-sky-500 transform -translate-x-1/2"></div>
+                    <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-purple-300 to-purple-500 transform -translate-x-1/2"></div>
                   )}
                 </div>
                 
-                <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-sky-500 transition-colors">
+                <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-purple-500 transition-colors">
                   {step.title}
                 </h3>
                 
@@ -315,18 +375,18 @@ const Services = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900 relative">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50/50 dark:from-gray-900 dark:to-purple-950/30 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-slide-down">
-            <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6">
-              Why Choose <span className="ai-precision-text">ProNarrative</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+              Why Choose <span className="ai-precision-text">DEFY LABS</span>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="group service-card-hover transition-all duration-500 border-0 animate-slide-right">
+            <Card className="group transition-all duration-500 border-0 animate-slide-up hover:scale-105 floating-orb">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
+                <div className="w-16 h-16 defy-gradient rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
                   <Brain className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-4">AI-Enhanced Intelligence</h3>
@@ -336,9 +396,9 @@ const Services = () => {
               </CardContent>
             </Card>
 
-            <Card className="group service-card-hover transition-all duration-500 border-0 animate-scale-in" style={{ animationDelay: '200ms' }}>
+            <Card className="group transition-all duration-500 border-0 animate-scale-in hover:scale-105 floating-orb" style={{ animationDelay: '200ms' }}>
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
+                <div className="w-16 h-16 defy-gradient rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
                   <Users className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-4">Proven Results</h3>
@@ -348,9 +408,9 @@ const Services = () => {
               </CardContent>
             </Card>
 
-            <Card className="group service-card-hover transition-all duration-500 border-0 animate-slide-left" style={{ animationDelay: '400ms' }}>
+            <Card className="group transition-all duration-500 border-0 animate-slide-up hover:scale-105 floating-orb" style={{ animationDelay: '400ms' }}>
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
+                <div className="w-16 h-16 defy-gradient rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-4">24/7 Optimization</h3>
@@ -365,10 +425,10 @@ const Services = () => {
 
       {/* CTA Section */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 gradient-bg opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-100/50 to-pink-100/50 dark:from-purple-950/50 dark:to-pink-950/50"></div>
         <FloatingBackground variant="default" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6 animate-slide-down">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 animate-slide-down">
             Ready to Accelerate Your Growth?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 animate-fade-in">
@@ -377,7 +437,7 @@ const Services = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
             <Button 
               size="lg"
-              className="gradient-bg modern-hover px-8 py-6"
+              className="defy-gradient modern-button-hover px-8 py-6"
               asChild
             >
               <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
@@ -387,7 +447,7 @@ const Services = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950 px-8 py-6 outline-hover"
+              className="border-purple-500 text-purple-500 hover:bg-purple-50 dark:hover:bg-purple-950 px-8 py-6 modern-button-hover"
               asChild
             >
               <a href="/contact">

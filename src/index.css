@@ -14,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 200 100% 50%;
+    --primary: 270 95% 75%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -23,15 +23,15 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 200 100% 96%;
-    --accent-foreground: 200 100% 10%;
+    --accent: 270 95% 96%;
+    --accent-foreground: 270 95% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 200 100% 50%;
+    --ring: 270 95% 75%;
 
     --radius: 0.75rem;
 
@@ -55,7 +55,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 200 100% 50%;
+    --primary: 270 95% 75%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -64,15 +64,15 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 200 100% 20%;
-    --accent-foreground: 200 100% 90%;
+    --accent: 270 95% 20%;
+    --accent-foreground: 270 95% 90%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 200 100% 50%;
+    --ring: 270 95% 75%;
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -100,12 +100,70 @@
 }
 
 @layer components {
-  .gradient-bg {
-    background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #7dd3fc 100%);
+  /* DEFY LABS Logo */
+  .defy-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    line-height: 0.8;
+    animation: logo-glow 4s ease-in-out infinite;
+  }
+
+  .defy-text {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #a855f7, #c084fc, #e879f9);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease-in-out infinite;
+    letter-spacing: 0.1em;
+  }
+
+  .labs-text {
+    font-size: 0.8rem;
+    color: #6b7280;
+    letter-spacing: 0.2em;
+    margin-top: -2px;
+    animation: fade-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes logo-glow {
+    0%, 100% {
+      filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.3));
+    }
+    50% {
+      filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.5));
+    }
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes fade-pulse {
+    0%, 100% {
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  /* Updated Gradients */
+  .defy-gradient {
+    background: linear-gradient(135deg, #a855f7 0%, #c084fc 50%, #e879f9 100%);
   }
   
-  .dark-gradient-bg {
-    background: linear-gradient(135deg, #0369a1 0%, #0284c7 50%, #0ea5e9 100%);
+  .dark-defy-gradient {
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
   }
 
   .glass-effect {
@@ -120,14 +178,14 @@
   }
 
   .ai-precision-text {
-    background: linear-gradient(135deg, #0ea5e9, #3b82f6, #8b5cf6, #ec4899);
+    background: linear-gradient(135deg, #a855f7, #c084fc, #e879f9, #f472b6);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradient-flow-smooth 8s ease-in-out infinite;
-    border-radius: 3rem;
+    animation: gradient-flow-smooth 6s ease-in-out infinite;
     padding: 1rem 2rem;
+    border-radius: 2rem;
     position: relative;
   }
 
@@ -136,13 +194,13 @@
     position: absolute;
     inset: 0;
     padding: 1px;
-    background: linear-gradient(135deg, #0ea5e9, #3b82f6, #8b5cf6, #ec4899);
+    background: linear-gradient(135deg, #a855f7, #c084fc, #e879f9, #f472b6);
     background-size: 300% 300%;
-    border-radius: 3rem;
+    border-radius: 2rem;
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
-    opacity: 0.15;
-    animation: gradient-flow-smooth 8s ease-in-out infinite;
+    opacity: 0.1;
+    animation: gradient-flow-smooth 6s ease-in-out infinite;
   }
 
   @keyframes gradient-flow-smooth {
@@ -152,6 +210,11 @@
     50% {
       background-position: 100% 50%;
     }
+  }
+
+  /* Floating Badge Animation */
+  .floating-badge {
+    animation: float-gentle 4s ease-in-out infinite;
   }
 
   /* Modern Button Hover Effects */
@@ -178,65 +241,28 @@
 
   .modern-button-hover:hover {
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(14, 165, 233, 0.3);
-  }
-
-  .outline-hover {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-  }
-
-  .outline-hover::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(45deg, #0ea5e9, #38bdf8);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .outline-hover:hover::after {
-    opacity: 1;
-  }
-
-  .outline-hover:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 15px rgba(14, 165, 233, 0.2);
-  }
-
-  .icon-hover {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .icon-hover:hover {
-    transform: translateY(-1px) scale(1.02);
-    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
-  }
-
-  .service-card-hover {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .service-card-hover:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.1);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.3);
   }
 
   /* Enhanced Animation Classes */
   .animate-float-gentle {
-    animation: float-gentle 8s ease-in-out infinite;
+    animation: float-gentle 6s ease-in-out infinite;
   }
 
-  .animate-pulse-slow {
-    animation: pulse-slow 4s ease-in-out infinite;
+  .animate-slide-down {
+    animation: slide-down 0.5s ease-out;
   }
 
-  .animate-glow-gentle {
-    animation: glow-gentle 6s ease-in-out infinite;
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out;
   }
 
   @keyframes float-gentle {
@@ -244,39 +270,76 @@
       transform: translateY(0px) rotate(0deg);
     }
     33% {
-      transform: translateY(-10px) rotate(1deg);
+      transform: translateY(-8px) rotate(1deg);
     }
     66% {
-      transform: translateY(-5px) rotate(-1deg);
+      transform: translateY(-4px) rotate(-1deg);
     }
   }
 
-  @keyframes pulse-slow {
-    0%, 100% {
-      opacity: 0.3;
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
     }
-    50% {
-      opacity: 0.8;
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
-  @keyframes glow-gentle {
-    0%, 100% {
-      box-shadow: 0 0 5px rgba(14, 165, 233, 0.3);
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
     }
-    50% {
-      box-shadow: 0 0 10px rgba(14, 165, 233, 0.6);
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Background animations */
+  .floating-orb {
+    animation: float-gentle 8s ease-in-out infinite;
+  }
+
+  .floating-orb:nth-child(2) {
+    animation-delay: -2s;
+  }
+
+  .floating-orb:nth-child(3) {
+    animation-delay: -4s;
+  }
+
+  .floating-orb:nth-child(4) {
+    animation-delay: -6s;
   }
 }
 
 @layer utilities {
   .animation-delay-1000 {
     animation-delay: 1s;
-  }
-  
-  .animation-delay-1500 {
-    animation-delay: 1.5s;
   }
   
   .animation-delay-2000 {

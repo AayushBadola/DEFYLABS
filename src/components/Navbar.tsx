@@ -40,17 +40,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="transform group-hover:scale-105 transition-transform duration-300">
-              <img 
-                src="/lovable-uploads/ae781898-245f-4ffb-b4c0-1d4dd696fcfb.png" 
-                alt="ProNarrative Logo" 
-                className="h-10 w-auto dark:hidden"
-              />
-              <img 
-                src="/lovable-uploads/5a0ce522-32ea-4dcd-a78d-f2cbb619c65c.png" 
-                alt="ProNarrative Logo" 
-                className="h-10 w-auto hidden dark:block"
-              />
+            <div className="defy-logo">
+              <span className="defy-text">DEFY</span>
+              <span className="labs-text">L.A.B.S</span>
             </div>
           </Link>
 
@@ -60,15 +52,15 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-sky-500 ${
+                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-purple-500 ${
                   location.pathname === item.path
-                    ? "text-sky-500"
+                    ? "text-purple-500"
                     : "text-foreground"
                 }`}
               >
                 {item.name}
                 {location.pathname === item.path && (
-                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-sky-400 to-sky-600 rounded-full" />
+                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full" />
                 )}
               </Link>
             ))}
@@ -78,7 +70,7 @@ const Navbar = () => {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="rounded-full hover:bg-sky-100 dark:hover:bg-sky-900"
+              className="rounded-full hover:bg-purple-100 dark:hover:bg-purple-900"
             >
               {theme === "light" ? (
                 <Moon className="h-5 w-5" />
@@ -90,7 +82,7 @@ const Navbar = () => {
             {/* CTA Button */}
             <Button 
               asChild
-              className="gradient-bg modern-button-hover transition-all duration-300"
+              className="defy-gradient modern-button-hover transition-all duration-300"
             >
               <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
                 Book Meeting
@@ -125,16 +117,16 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-lg border-b border-border shadow-lg animate-slide-up">
+          <div className="md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-lg border-b border-border shadow-lg animate-slide-down">
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 text-base font-medium transition-colors duration-300 hover:text-sky-500 ${
+                  className={`block px-3 py-2 text-base font-medium transition-colors duration-300 hover:text-purple-500 ${
                     location.pathname === item.path
-                      ? "text-sky-500 bg-sky-50 dark:bg-sky-950 rounded-lg"
+                      ? "text-purple-500 bg-purple-50 dark:bg-purple-950 rounded-lg"
                       : "text-foreground"
                   }`}
                 >
@@ -143,7 +135,7 @@ const Navbar = () => {
               ))}
               <Button 
                 asChild
-                className="w-full gradient-bg modern-button-hover"
+                className="w-full defy-gradient modern-button-hover"
               >
                 <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
                   Book Meeting

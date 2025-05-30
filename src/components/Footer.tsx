@@ -13,12 +13,10 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">P</span>
+              <div className="defy-logo scale-75">
+                <span className="defy-text">DEFY</span>
+                <span className="labs-text">L.A.B.S</span>
               </div>
-              <span className="text-xl font-space font-bold bg-gradient-to-r from-sky-500 to-sky-700 bg-clip-text text-transparent">
-                ProNarrative
-              </span>
             </Link>
             <p className="text-muted-foreground text-sm">
               Empowering businesses with AI-driven digital solutions for exponential growth.
@@ -42,22 +40,22 @@ const Footer = () => {
             <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-sky-500 transition-colors text-sm">
+                <Link to="/" className="text-muted-foreground hover:text-purple-500 transition-colors text-sm">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-muted-foreground hover:text-sky-500 transition-colors text-sm">
+                <Link to="/about" className="text-muted-foreground hover:text-purple-500 transition-colors text-sm">
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-sky-500 transition-colors text-sm">
+                <Link to="/services" className="text-muted-foreground hover:text-purple-500 transition-colors text-sm">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-muted-foreground hover:text-sky-500 transition-colors text-sm">
+                <Link to="/contact" className="text-muted-foreground hover:text-purple-500 transition-colors text-sm">
                   Contact
                 </Link>
               </li>
@@ -70,7 +68,8 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="text-muted-foreground text-sm">SEO Optimization</li>
               <li className="text-muted-foreground text-sm">Funnel Optimization</li>
-              <li className="text-muted-foreground text-sm">Market Research</li>
+              <li className="text-muted-foreground text-sm">Landing Page Optimization</li>
+              <li className="text-muted-foreground text-sm">Future Planning</li>
               <li className="text-muted-foreground text-sm">AI Marketing</li>
             </ul>
           </div>
@@ -80,14 +79,14 @@ const Footer = () => {
             <h3 className="font-semibold text-foreground mb-4">Get In Touch</h3>
             <div className="space-y-2">
               <p className="text-muted-foreground text-sm">
-                <a href="mailto:aayush.badola2@gmail.com" className="hover:text-sky-500 transition-colors">
+                <a href="mailto:aayush.badola2@gmail.com" className="hover:text-purple-500 transition-colors">
                   aayush.badola2@gmail.com
                 </a>
               </p>
               <Button 
                 asChild
                 size="sm"
-                className="gradient-bg hover:shadow-lg hover:shadow-sky-500/25 w-full"
+                className="defy-gradient hover:shadow-lg hover:shadow-purple-500/25 w-full modern-button-hover"
               >
                 <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
                   Schedule Consultation
@@ -100,7 +99,7 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-muted-foreground text-sm">
-              © {currentYear} ProNarrative. All rights reserved.
+              © {currentYear} DEFY LABS. All rights reserved.
             </p>
             <p className="text-muted-foreground text-sm mt-2 md:mt-0">
               Powered by 1.8 Trillion Parameter AI Technology

@@ -50,15 +50,15 @@ const Home = () => {
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 gradient-bg opacity-3"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-pink-50/50 dark:from-purple-950/30 dark:to-pink-950/30"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8 animate-slide-down">
-            <Badge variant="secondary" className="px-4 py-2 text-sm font-medium">
+            <Badge variant="secondary" className="px-4 py-2 text-sm font-medium floating-badge">
               Powered by 1.8 Trillion Parameter AI
             </Badge>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-space font-bold text-foreground leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
               Digital Growth with
               <span className="block ai-precision-text text-6xl md:text-8xl font-extrabold py-6 my-4">
                 AI Precision
@@ -73,7 +73,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
               <Button 
                 size="lg"
-                className="gradient-bg modern-button-hover px-8 py-6 text-lg"
+                className="defy-gradient modern-button-hover px-8 py-6 text-lg"
                 asChild
               >
                 <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
@@ -84,7 +84,7 @@ const Home = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950 px-8 py-6 text-lg outline-hover"
+                className="border-purple-500 text-purple-500 hover:bg-purple-50 dark:hover:bg-purple-950 px-8 py-6 text-lg modern-button-hover"
                 asChild
               >
                 <a href="/services">
@@ -93,30 +93,26 @@ const Home = () => {
               </Button>
             </div>
           </div>
-          
-          {/* Subtle Floating Animation Elements */}
-          <div className="absolute top-1/2 right-10 w-48 h-48 bg-gradient-to-br from-sky-400/8 to-sky-600/8 rounded-full blur-3xl animate-float-gentle hidden lg:block"></div>
-          <div className="absolute top-1/4 left-10 w-32 h-32 bg-gradient-to-br from-cyan-300/6 to-cyan-500/6 rounded-full blur-2xl animate-float-gentle animation-delay-4000 hidden lg:block"></div>
         </div>
 
         {/* Enhanced Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ArrowDown className="w-6 h-6 text-sky-500" />
+          <ArrowDown className="w-6 h-6 text-purple-500" />
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900 relative">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50/50 dark:from-gray-900 dark:to-purple-950/30 relative">
         <FloatingBackground variant="data" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div 
                 key={stat.label} 
-                className="text-center group animate-slide-right"
+                className="text-center group animate-scale-in"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-sky-400 to-sky-600 rounded-2xl mb-4 group-hover:scale-105 transition-all duration-300">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl mb-4 group-hover:scale-105 transition-all duration-300 floating-orb">
                   <stat.icon className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-3xl md:text-4xl font-bold text-foreground">{stat.value}</div>
@@ -132,7 +128,7 @@ const Home = () => {
         <FloatingBackground variant="neural" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16 animate-slide-down">
-            <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
               Why We're <span className="ai-precision-text">Unique</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -141,9 +137,9 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-slide-right">
+            <div className="space-y-8 animate-slide-up">
               <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300">
+                <div className="w-12 h-12 defy-gradient rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300 floating-orb">
                   <Brain className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -156,7 +152,7 @@ const Home = () => {
               </div>
 
               <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300">
+                <div className="w-12 h-12 defy-gradient rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300 floating-orb">
                   <Zap className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -169,7 +165,7 @@ const Home = () => {
               </div>
 
               <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300">
+                <div className="w-12 h-12 defy-gradient rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300 floating-orb">
                   <Target className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -182,14 +178,14 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="relative animate-slide-left">
-              <div className="glass-effect rounded-3xl p-8 backdrop-blur-sm group hover:scale-105 transition-all duration-500">
+            <div className="relative animate-fade-in">
+              <div className="glass-effect rounded-3xl p-8 backdrop-blur-sm group hover:scale-105 transition-all duration-500 floating-orb">
                 <img 
                   src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" 
                   alt="AI Technology" 
                   className="rounded-2xl w-full h-80 object-cover group-hover:scale-105 transition-all duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-sky-500/20 to-transparent rounded-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-transparent rounded-3xl"></div>
               </div>
             </div>
           </div>
@@ -197,11 +193,11 @@ const Home = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900 relative">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50/50 dark:from-gray-900 dark:to-purple-950/30 relative">
         <FloatingBackground variant="circuit" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
               Our <span className="ai-precision-text">Services</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -213,12 +209,12 @@ const Home = () => {
             {services.map((service, index) => (
               <Card 
                 key={service.title} 
-                className="group service-card-hover transition-all duration-500 border-0 bg-white dark:bg-gray-800"
+                className="group transition-all duration-500 border-0 bg-white dark:bg-gray-800 hover:scale-105 floating-orb"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <CardContent className="p-8 text-center">
                   <div className="text-4xl mb-6 group-hover:scale-110 transition-all duration-300">{service.icon}</div>
-                  <h3 className="text-xl font-semibold text-foreground mb-4 group-hover:text-sky-500 transition-colors">
+                  <h3 className="text-xl font-semibold text-foreground mb-4 group-hover:text-purple-500 transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-muted-foreground">
@@ -233,7 +229,7 @@ const Home = () => {
             <Button 
               size="lg"
               variant="outline"
-              className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950 px-8 py-6 outline-hover"
+              className="border-purple-500 text-purple-500 hover:bg-purple-50 dark:hover:bg-purple-950 px-8 py-6 modern-button-hover"
               asChild
             >
               <a href="/services">
@@ -249,7 +245,7 @@ const Home = () => {
         <FloatingBackground variant="minimal" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-slide-down">
-            <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
               What Sets Us Apart
             </h2>
           </div>
@@ -258,10 +254,10 @@ const Home = () => {
             {features.map((feature, index) => (
               <div 
                 key={feature}
-                className="flex items-center space-x-3 p-4 rounded-xl bg-gradient-to-r from-sky-50 to-transparent dark:from-sky-950 dark:to-transparent group hover:from-sky-100 dark:hover:from-sky-900 hover:scale-105 transition-all duration-300 animate-slide-up"
+                className="flex items-center space-x-3 p-4 rounded-xl bg-gradient-to-r from-purple-50 to-transparent dark:from-purple-950 dark:to-transparent group hover:from-purple-100 dark:hover:from-purple-900 hover:scale-105 transition-all duration-300 animate-slide-up floating-orb"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <Star className="w-5 h-5 text-sky-500 flex-shrink-0 group-hover:rotate-180 transition-all duration-300" />
+                <Star className="w-5 h-5 text-purple-500 flex-shrink-0 group-hover:rotate-180 transition-all duration-300" />
                 <span className="font-medium text-foreground">{feature}</span>
               </div>
             ))}
@@ -271,10 +267,10 @@ const Home = () => {
 
       {/* CTA Section */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 gradient-bg opacity-5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-100/50 to-pink-100/50 dark:from-purple-950/50 dark:to-pink-950/50"></div>
         <FloatingBackground variant="default" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6 animate-slide-down">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 animate-slide-down">
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 animate-fade-in">
@@ -283,7 +279,7 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
             <Button 
               size="lg"
-              className="gradient-bg modern-button-hover px-8 py-6 text-lg"
+              className="defy-gradient modern-button-hover px-8 py-6 text-lg"
               asChild
             >
               <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
@@ -293,7 +289,7 @@ const Home = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950 px-8 py-6 text-lg outline-hover"
+              className="border-purple-500 text-purple-500 hover:bg-purple-50 dark:hover:bg-purple-950 px-8 py-6 text-lg modern-button-hover"
               asChild
             >
               <a href="/contact">
