@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -22,6 +23,16 @@ const Home = () => {
       title: "Funnel Optimization",
       description: "Convert more visitors with AI-powered funnel analysis",
       icon: "🎯"
+    },
+    {
+      title: "Landing Page Optimization",
+      description: "AI-enhanced landing page optimization for maximum conversions",
+      icon: "📄"
+    },
+    {
+      title: "Future Planning",
+      description: "Strategic future planning with AI-driven market insights",
+      icon: "🔮"
     },
     {
       title: "Market Research",
@@ -101,7 +112,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section - Fixed animations */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50/50 dark:from-gray-900 dark:to-purple-950/30 relative">
         <FloatingBackground variant="data" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -109,10 +120,9 @@ const Home = () => {
             {stats.map((stat, index) => (
               <div 
                 key={stat.label} 
-                className="text-center group animate-scale-in"
-                style={{ animationDelay: `${index * 200}ms` }}
+                className="text-center group"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl mb-4 group-hover:scale-105 transition-all duration-300 floating-orb">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl mb-4 group-hover:scale-105 transition-all duration-300">
                   <stat.icon className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-3xl md:text-4xl font-bold text-foreground">{stat.value}</div>
@@ -139,7 +149,7 @@ const Home = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-slide-up">
               <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 defy-gradient rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300 floating-orb">
+                <div className="w-12 h-12 defy-gradient rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300">
                   <Brain className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -152,7 +162,7 @@ const Home = () => {
               </div>
 
               <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 defy-gradient rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300 floating-orb">
+                <div className="w-12 h-12 defy-gradient rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300">
                   <Zap className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -165,7 +175,7 @@ const Home = () => {
               </div>
 
               <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 defy-gradient rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300 floating-orb">
+                <div className="w-12 h-12 defy-gradient rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300">
                   <Target className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -179,7 +189,7 @@ const Home = () => {
             </div>
 
             <div className="relative animate-fade-in">
-              <div className="glass-effect rounded-3xl p-8 backdrop-blur-sm group hover:scale-105 transition-all duration-500 floating-orb">
+              <div className="glass-effect rounded-3xl p-8 backdrop-blur-sm group hover:scale-105 transition-all duration-500">
                 <img 
                   src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" 
                   alt="AI Technology" 
@@ -205,12 +215,11 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Card 
                 key={service.title} 
-                className="group transition-all duration-500 border-0 bg-white dark:bg-gray-800 hover:scale-105 floating-orb"
-                style={{ animationDelay: `${index * 150}ms` }}
+                className="group transition-all duration-500 border-0 bg-white dark:bg-gray-800 hover:scale-105"
               >
                 <CardContent className="p-8 text-center">
                   <div className="text-4xl mb-6 group-hover:scale-110 transition-all duration-300">{service.icon}</div>
@@ -254,7 +263,7 @@ const Home = () => {
             {features.map((feature, index) => (
               <div 
                 key={feature}
-                className="flex items-center space-x-3 p-4 rounded-xl bg-gradient-to-r from-purple-50 to-transparent dark:from-purple-950 dark:to-transparent group hover:from-purple-100 dark:hover:from-purple-900 hover:scale-105 transition-all duration-300 animate-slide-up floating-orb"
+                className="flex items-center space-x-3 p-4 rounded-xl bg-gradient-to-r from-purple-50 to-transparent dark:from-purple-950 dark:to-transparent group hover:from-purple-100 dark:hover:from-purple-900 hover:scale-105 transition-all duration-300 animate-slide-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <Star className="w-5 h-5 text-purple-500 flex-shrink-0 group-hover:rotate-180 transition-all duration-300" />

@@ -2,7 +2,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Linkedin, Mail, ExternalLink, BookOpen, Award, Brain, Code, Target } from "lucide-react";
+import { Linkedin, Mail, ExternalLink, BookOpen, Award, Brain, Code, Target, Star } from "lucide-react";
+import FloatingBackground from "@/components/FloatingBackground";
 
 const About = () => {
   const certifications = [
@@ -51,7 +52,9 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 relative">
+      <FloatingBackground variant="minimal" />
+      
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 gradient-bg opacity-5"></div>
@@ -112,6 +115,7 @@ const About = () => {
 
       {/* Vision & Mission */}
       <section className="py-20 bg-gray-50 dark:bg-gray-900">
+        <FloatingBackground variant="neural" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6">
@@ -151,6 +155,7 @@ const About = () => {
 
       {/* Personal Projects */}
       <section className="py-20">
+        <FloatingBackground variant="data" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6">
@@ -203,6 +208,7 @@ const About = () => {
 
       {/* Certifications & Education */}
       <section className="py-20 bg-gray-50 dark:bg-gray-900">
+        <FloatingBackground variant="circuit" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Certifications */}
@@ -218,10 +224,10 @@ const About = () => {
                 {certifications.map((cert, index) => (
                   <div 
                     key={cert}
-                    className="flex items-center space-x-3 p-4 rounded-xl bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow duration-300 animate-slide-up"
+                    className="flex items-center space-x-3 p-4 rounded-xl bg-white dark:bg-gray-800 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 animate-slide-up group"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    <div className="w-2 h-2 bg-sky-500 rounded-full flex-shrink-0"></div>
+                    <Star className="w-4 h-4 text-sky-500 flex-shrink-0 group-hover:rotate-180 transition-all duration-300" />
                     <span className="text-foreground font-medium">{cert}</span>
                   </div>
                 ))}
@@ -241,10 +247,10 @@ const About = () => {
                 {books.map((book, index) => (
                   <div 
                     key={book}
-                    className="flex items-center space-x-3 p-4 rounded-xl bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow duration-300 animate-slide-up"
+                    className="flex items-center space-x-3 p-4 rounded-xl bg-white dark:bg-gray-800 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 animate-slide-up group"
                     style={{ animationDelay: `${(index + 5) * 100}ms` }}
                   >
-                    <div className="w-2 h-2 bg-sky-500 rounded-full flex-shrink-0"></div>
+                    <Star className="w-4 h-4 text-sky-500 flex-shrink-0 group-hover:rotate-180 transition-all duration-300" />
                     <span className="text-foreground font-medium">{book}</span>
                   </div>
                 ))}
@@ -256,6 +262,7 @@ const About = () => {
 
       {/* Key Achievements */}
       <section className="py-20">
+        <FloatingBackground variant="minimal" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6">
@@ -270,11 +277,11 @@ const About = () => {
             {achievements.map((achievement, index) => (
               <div 
                 key={achievement}
-                className="flex items-center space-x-3 p-6 rounded-xl bg-gradient-to-r from-sky-50 to-transparent dark:from-sky-950 dark:to-transparent group hover:from-sky-100 dark:hover:from-sky-900 transition-all duration-300 animate-slide-up"
+                className="flex items-center space-x-3 p-6 rounded-xl bg-gradient-to-r from-sky-50 to-transparent dark:from-sky-950 dark:to-transparent group hover:from-sky-100 dark:hover:from-sky-900 hover:scale-105 transition-all duration-300 animate-slide-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Award className="w-4 h-4 text-white" />
+                  <Star className="w-4 h-4 text-white group-hover:rotate-180 transition-all duration-300" />
                 </div>
                 <span className="font-medium text-foreground">{achievement}</span>
               </div>
@@ -286,6 +293,7 @@ const About = () => {
       {/* CTA Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 gradient-bg opacity-10"></div>
+        <FloatingBackground variant="default" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-5xl font-space font-bold text-foreground mb-6 animate-fade-in">
             Ready to Work Together?
