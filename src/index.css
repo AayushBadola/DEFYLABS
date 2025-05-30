@@ -100,7 +100,7 @@
 }
 
 @layer components {
-  /* DEFY LABS Logo */
+  /* DEFY LABS Logo with dots */
   .defy-logo {
     display: flex;
     flex-direction: column;
@@ -120,14 +120,51 @@
     background-clip: text;
     animation: gradient-shift 3s ease-in-out infinite;
     letter-spacing: 0.1em;
+    position: relative;
+  }
+
+  .defy-text::after {
+    content: '• • • •';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.4rem;
+    color: #a855f7;
+    letter-spacing: 0.3em;
+    animation: dots-pulse 2s ease-in-out infinite;
   }
 
   .labs-text {
     font-size: 0.8rem;
     color: #6b7280;
     letter-spacing: 0.2em;
-    margin-top: -2px;
+    margin-top: 2px;
+    position: relative;
     animation: fade-pulse 2s ease-in-out infinite;
+  }
+
+  .labs-text::after {
+    content: '• • • •';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.3rem;
+    color: #9ca3af;
+    letter-spacing: 0.2em;
+    animation: dots-pulse 2s ease-in-out infinite 0.5s;
+  }
+
+  @keyframes dots-pulse {
+    0%, 100% {
+      opacity: 0.5;
+      transform: translateX(-50%) scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(-50%) scale(1.1);
+    }
   }
 
   @keyframes logo-glow {
@@ -155,6 +192,19 @@
     50% {
       opacity: 1;
     }
+  }
+
+  /* Service Card Hover Animation */
+  .service-card-hover {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+  }
+
+  .service-card-hover:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateY(-10px);
+    box-shadow: 
+      0 20px 40px rgba(168, 85, 247, 0.15),
+      0 10px 20px rgba(168, 85, 247, 0.1);
   }
 
   /* Updated Gradients */

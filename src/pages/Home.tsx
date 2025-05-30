@@ -1,9 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, Star, Users, Zap, Target, TrendingUp, Brain } from "lucide-react";
 import FloatingBackground from "@/components/FloatingBackground";
+import ProjectsSection from "@/components/ProjectsSection";
 
 const Home = () => {
   const stats = [
@@ -201,6 +201,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Projects Section */}
+      <ProjectsSection />
 
       {/* Services Preview */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50/50 dark:from-gray-900 dark:to-purple-950/30 relative">
