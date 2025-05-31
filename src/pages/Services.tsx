@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -344,21 +343,20 @@ const Services = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+            {/* Connection lines - positioned behind circles */}
+            <div className="hidden lg:block absolute top-10 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-purple-300 to-purple-500 z-0" style={{ left: '12.5%', right: '12.5%' }}></div>
+            
             {processSteps.map((step, index) => (
               <div 
                 key={step.step}
-                className="text-center group animate-scale-in floating-orb relative"
+                className="text-center group animate-scale-in floating-orb relative z-10"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="relative mb-8 z-10">
-                  <div className="w-20 h-20 defy-gradient rounded-full flex items-center justify-center mx-auto group-hover:scale-105 transition-all duration-300 relative z-20">
+                <div className="relative mb-8">
+                  <div className="w-20 h-20 defy-gradient rounded-full flex items-center justify-center mx-auto group-hover:scale-105 transition-all duration-300 relative z-20 border-4 border-white dark:border-gray-900">
                     <span className="text-2xl font-bold text-white">{step.step}</span>
                   </div>
-                  
-                  {index < processSteps.length - 1 && (
-                    <div className="hidden lg:block absolute top-10 left-1/2 w-full h-0.5 bg-gradient-to-r from-purple-300 to-purple-500 z-0" style={{ transform: 'translateX(50%)' }}></div>
-                  )}
                 </div>
                 
                 <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-purple-500 transition-colors">

@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -10,8 +9,8 @@ const Home = () => {
   const stats = [
     { label: "AI Parameters", value: "1.8T", icon: Brain },
     { label: "Success Rate", value: "97%", icon: Target },
-    { label: "Growth Average", value: "340%", icon: TrendingUp },
-    { label: "Happy Clients", value: "200+", icon: Users },
+    { label: "Growth Average", value: "70%", icon: TrendingUp },
+    { label: "Happy Clients", value: "Multiple", icon: Users },
   ];
 
   const services = [
