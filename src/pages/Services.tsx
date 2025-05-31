@@ -348,16 +348,16 @@ const Services = () => {
             {processSteps.map((step, index) => (
               <div 
                 key={step.step}
-                className="text-center group animate-scale-in floating-orb"
+                className="text-center group animate-scale-in floating-orb relative"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="relative mb-8">
-                  <div className="w-20 h-20 defy-gradient rounded-full flex items-center justify-center mx-auto group-hover:scale-105 transition-all duration-300">
+                <div className="relative mb-8 z-10">
+                  <div className="w-20 h-20 defy-gradient rounded-full flex items-center justify-center mx-auto group-hover:scale-105 transition-all duration-300 relative z-20">
                     <span className="text-2xl font-bold text-white">{step.step}</span>
                   </div>
                   
                   {index < processSteps.length - 1 && (
-                    <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-purple-300 to-purple-500 transform -translate-x-1/2"></div>
+                    <div className="hidden lg:block absolute top-10 left-1/2 w-full h-0.5 bg-gradient-to-r from-purple-300 to-purple-500 z-0" style={{ transform: 'translateX(50%)' }}></div>
                   )}
                 </div>
                 

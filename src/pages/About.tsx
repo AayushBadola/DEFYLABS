@@ -64,13 +64,13 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-in">
-              <div className="text-center lg:text-left">
-                <Badge variant="secondary" className="px-6 py-3 text-lg floating-founder">
+              <div className="text-center lg:text-center">
+                <Badge variant="secondary" className="px-8 py-4 text-xl floating-founder">
                   Founder & AI Visionary
                 </Badge>
               </div>
               
-              <h1 className="text-4xl md:text-6xl font-space font-bold text-foreground">
+              <h1 className="text-4xl md:text-6xl font-space font-bold text-foreground text-center lg:text-left">
                 Meet <span className="bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text text-transparent">Aayush Badola</span>
               </h1>
               

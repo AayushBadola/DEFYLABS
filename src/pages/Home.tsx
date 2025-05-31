@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -191,8 +192,8 @@ const Home = () => {
             <div className="relative animate-fade-in">
               <div className="glass-effect rounded-3xl p-8 backdrop-blur-sm group hover:scale-105 transition-all duration-500">
                 <img 
-                  src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" 
-                  alt="AI Technology" 
+                  src="/lovable-uploads/af53e2ec-1d90-428b-9862-95c85dbcc7fc.png" 
+                  alt="AI Brain Technology" 
                   className="rounded-2xl w-full h-80 object-cover group-hover:scale-105 transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-transparent rounded-3xl"></div>
