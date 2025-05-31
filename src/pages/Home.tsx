@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, Star, Users, Zap, Target, TrendingUp, Brain } from "lucide-react";
+import { Link } from "react-router-dom";
 import FloatingBackground from "@/components/FloatingBackground";
 import ProjectsSection from "@/components/ProjectsSection";
 
@@ -98,9 +99,9 @@ const Home = () => {
                 className="border-purple-500 text-purple-500 hover:bg-purple-50 dark:hover:bg-purple-950 px-8 py-6 text-lg modern-button-hover"
                 asChild
               >
-                <a href="/services">
+                <Link to="/services">
                   Explore Services
-                </a>
+                </Link>
               </Button>
             </div>
           </div>
@@ -244,9 +245,9 @@ const Home = () => {
               className="border-purple-500 text-purple-500 hover:bg-purple-50 dark:hover:bg-purple-950 px-8 py-6 modern-button-hover"
               asChild
             >
-              <a href="/services">
+              <Link to="/services">
                 View All Services
-              </a>
+              </Link>
             </Button>
           </div>
         </div>

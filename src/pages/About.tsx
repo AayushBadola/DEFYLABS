@@ -1,8 +1,8 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Linkedin, Mail, ExternalLink, BookOpen, Award, Brain, Code, Target, Star, TrendingUp, Shield, Search } from "lucide-react";
+import { Link } from "react-router-dom";
 import FloatingBackground from "@/components/FloatingBackground";
 
 const About = () => {
@@ -81,21 +81,42 @@ const About = () => {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <Button asChild className="gradient-bg hover:shadow-lg hover:shadow-sky-500/25">
+                <Button 
+                  asChild 
+                  className="gradient-bg hover:shadow-lg hover:shadow-sky-500/25"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open('https://www.linkedin.com/in/aayush-badola-0a7b2b343/', '_blank', 'noopener,noreferrer');
+                  }}
+                >
                   <a href="https://www.linkedin.com/in/aayush-badola-0a7b2b343/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="w-4 h-4 mr-2" />
                     LinkedIn Profile
                   </a>
                 </Button>
                 
-                <Button variant="outline" asChild>
+                <Button 
+                  variant="outline" 
+                  asChild
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open('https://aayush-portfolio-main.vercel.app/', '_blank', 'noopener,noreferrer');
+                  }}
+                >
                   <a href="https://aayush-portfolio-main.vercel.app/" target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Portfolio Website
                   </a>
                 </Button>
                 
-                <Button variant="outline" asChild>
+                <Button 
+                  variant="outline" 
+                  asChild
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = 'mailto:aayush.badola2@gmail.com';
+                  }}
+                >
                   <a href="mailto:aayush.badola2@gmail.com">
                     <Mail className="w-4 h-4 mr-2" />
                     Email Me
@@ -323,9 +344,9 @@ const About = () => {
               className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950 px-8 py-6"
               asChild
             >
-              <a href="/contact">
+              <Link to="/contact">
                 Get in Touch
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
