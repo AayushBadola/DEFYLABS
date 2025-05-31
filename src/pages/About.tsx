@@ -1,7 +1,8 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Linkedin, Mail, ExternalLink, BookOpen, Award, Brain, Code, Target, Star } from "lucide-react";
+import { Linkedin, Mail, ExternalLink, BookOpen, Award, Brain, Code, Target, Star, TrendingUp, Shield, Search } from "lucide-react";
 import FloatingBackground from "@/components/FloatingBackground";
 
 const About = () => {
@@ -23,25 +24,25 @@ const About = () => {
 
   const projects = [
     {
-      title: "Cancer Classifier",
-      description: "Convolutional Neural Network (CNN) built with TensorFlow/Keras to classify brain MRI images into Glioma, Meningioma, and a general Tumor category. Based on Brain Cancer Dataset",
-      tech: "TensorFlow, Keras, CNN, Medical Imaging",
-      icon: Brain,
-      link: "https://github.com/AayushBadola/BrainCancerClassifier"
+      title: "Market Trend Predictor",
+      description: "AI-powered system that analyzes market data, stock movements, and economic indicators to predict future trends. Helps businesses make informed investment decisions and strategic planning.",
+      tech: "Machine Learning, Financial Data Analysis, Predictive Modeling",
+      icon: TrendingUp,
+      link: "https://calendly.com/aayush-badola2/consultationmeet"
     },
     {
-      title: "Fetal Development Monitor",
-      description: "Fetal Health Classification via custom Deep Learning (CNN-Transformer). Features Optuna HPO, AdamW, label smoothing, and GPU-accelerated training pipeline for high-accuracy CTG analysis.",
-      tech: "CNN-Transformer, Optuna, AdamW, Python",
-      icon: Target,
-      link: "https://github.com/AayushBadola/FetusHealth"
+      title: "Financial Fraud Detection",
+      description: "Advanced ML models that identify anomalies in financial transactions and credit card usage patterns. Real-time fraud prevention system with high accuracy rates.",
+      tech: "Anomaly Detection, Real-time Processing, Security AI",
+      icon: Shield,
+      link: "https://calendly.com/aayush-badola2/consultationmeet"
     },
     {
-      title: "Exoplanet Discovery",
-      description: "Machine learning pipeline for detecting exoplanets from Kepler Space Telescope data. Implements data preprocessing, model training (Random Forest), evaluation, and prediction, using Hydra for configuration and MLflow for experiment tracking",
-      tech: "Random Forest, Hydra, MLflow, Space Data",
-      icon: Code,
-      link: "https://github.com/AayushBadola/Exo-Planet-Detection"
+      title: "Product Market Predictor",
+      description: "AI system that analyzes public company share prices and product release timelines to predict market suitability and success potential for new products.",
+      tech: "Market Analysis, Timeline Correlation, Business Intelligence",
+      icon: Search,
+      link: "https://calendly.com/aayush-badola2/consultationmeet"
     }
   ];
 
@@ -63,9 +64,11 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-in">
-              <Badge variant="secondary" className="px-4 py-2 floating-founder">
-                Founder & AI Visionary
-              </Badge>
+              <div className="text-center lg:text-left">
+                <Badge variant="secondary" className="px-6 py-3 text-lg floating-founder">
+                  Founder & AI Visionary
+                </Badge>
+              </div>
               
               <h1 className="text-4xl md:text-6xl font-space font-bold text-foreground">
                 Meet <span className="bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text text-transparent">Aayush Badola</span>
@@ -164,7 +167,7 @@ const About = () => {
               Notable <span className="bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text text-transparent">Projects</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A showcase of cutting-edge AI and machine learning projects demonstrating expertise across diverse domains.
+              AI-powered solutions designed to help businesses grow, predict market trends, and optimize performance.
             </p>
           </div>
 
@@ -198,11 +201,11 @@ const About = () => {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-lg text-muted-foreground mb-6">And many more innovative projects...</p>
+            <p className="text-lg text-muted-foreground mb-6">And many more innovative business solutions...</p>
             <Button asChild variant="outline" className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950">
-              <a href="https://aayush-portfolio-main.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="w-4 h-4 mr-2" />
-                View Full Portfolio
+                Schedule Consultation
               </a>
             </Button>
           </div>

@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -100,7 +99,7 @@
 }
 
 @layer components {
-  /* DEFY LABS Logo with dots */
+  /* DEFY LABS Logo with dots and hover glow */
   .defy-logo {
     display: flex;
     flex-direction: column;
@@ -109,6 +108,13 @@
     font-weight: bold;
     line-height: 0.8;
     animation: logo-glow 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .defy-logo:hover {
+    animation: logo-glow-intense 2s ease-in-out infinite;
+    transform: scale(1.05);
   }
 
   .defy-text {
@@ -173,6 +179,15 @@
     }
     50% {
       filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.5));
+    }
+  }
+
+  @keyframes logo-glow-intense {
+    0%, 100% {
+      filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.5));
+    }
+    50% {
+      filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.8));
     }
   }
 

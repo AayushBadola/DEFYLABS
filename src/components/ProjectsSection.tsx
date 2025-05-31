@@ -2,36 +2,63 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Brain, Baby, Globe } from "lucide-react";
+import { ExternalLink, TrendingUp, Shield, Brain, Target, Search, Zap } from "lucide-react";
 
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "Cancer Classifier",
-      description: "AI-powered brain tumor detection and classification system using advanced neural networks for medical diagnostics.",
-      image: "/lovable-uploads/e36ce433-650a-404c-a230-1eac896327d7.png",
-      icon: Brain,
-      tags: ["AI/ML", "Healthcare", "Neural Networks"],
-      color: "from-red-400 to-pink-600",
-      link: "https://github.com/AayushBadola/BrainCancerClassifier"
-    },
-    {
-      title: "Fetal Development Monitor",
-      description: "Real-time fetal health monitoring system with predictive analytics for prenatal care optimization.",
-      image: "/lovable-uploads/e3f74d56-a8ab-4ebb-b684-685b6ad7b641.png",
-      icon: Baby,
-      tags: ["Healthcare", "Monitoring", "Predictive Analytics"],
-      color: "from-pink-400 to-purple-600",
-      link: "https://github.com/AayushBadola/FetusHealth"
-    },
-    {
-      title: "Exoplanet Discovery",
-      description: "Advanced space exploration and exoplanet identification system using machine learning algorithms.",
-      image: "/lovable-uploads/3cd5938c-5a92-4f55-b8eb-9b7885d98182.png",
-      icon: Globe,
-      tags: ["Space Tech", "Discovery", "Machine Learning"],
+      title: "Market Trend Predictor",
+      description: "AI-powered system that analyzes market data and stock movements to predict future trends, helping businesses make informed investment decisions.",
+      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80",
+      icon: TrendingUp,
+      tags: ["AI/ML", "Market Analysis", "Predictive Analytics"],
       color: "from-blue-400 to-indigo-600",
-      link: "https://github.com/AayushBadola/Exo-Planet-Detection"
+      link: "https://calendly.com/aayush-badola2/consultationmeet"
+    },
+    {
+      title: "Financial Fraud Detection",
+      description: "Advanced ML models that identify anomalies in financial transactions and credit card usage patterns to prevent fraud in real-time.",
+      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80",
+      icon: Shield,
+      tags: ["Machine Learning", "Fraud Detection", "Security"],
+      color: "from-red-400 to-pink-600",
+      link: "https://calendly.com/aayush-badola2/consultationmeet"
+    },
+    {
+      title: "Content Hook Optimizer",
+      description: "Deep learning algorithms that analyze successful content patterns to generate compelling headlines, taglines, and copy that drives user engagement.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      icon: Brain,
+      tags: ["Deep Learning", "Content Strategy", "User Engagement"],
+      color: "from-purple-400 to-violet-600",
+      link: "https://calendly.com/aayush-badola2/consultationmeet"
+    },
+    {
+      title: "Conversion Funnel AI",
+      description: "Intelligent optimization system that uses AI to improve SEO rankings, landing page performance, and user-to-customer conversion rates.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+      icon: Target,
+      tags: ["AI Optimization", "SEO", "Conversion Rate"],
+      color: "from-green-400 to-emerald-600",
+      link: "https://calendly.com/aayush-badola2/consultationmeet"
+    },
+    {
+      title: "Product Market Predictor",
+      description: "AI system that analyzes public company share prices and product release timelines to predict market suitability and success potential.",
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=800&q=80",
+      icon: Search,
+      tags: ["Market Research", "AI Analysis", "Product Strategy"],
+      color: "from-orange-400 to-red-600",
+      link: "https://calendly.com/aayush-badola2/consultationmeet"
+    },
+    {
+      title: "Business Growth Accelerator",
+      description: "Comprehensive AI-enhanced platform that combines all our tools to accelerate business growth through data-driven insights and optimization.",
+      image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=800&q=80",
+      icon: Zap,
+      tags: ["AI Platform", "Business Growth", "Analytics"],
+      color: "from-cyan-400 to-blue-600",
+      link: "https://calendly.com/aayush-badola2/consultationmeet"
     }
   ];
 
@@ -43,11 +70,11 @@ const ProjectsSection = () => {
             Featured <span className="ai-precision-text">Projects</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Showcasing our cutting-edge AI solutions across various industries
+            Showcasing our cutting-edge AI solutions that help businesses grow and thrive
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <Card 
               key={project.title}
@@ -93,7 +120,7 @@ const ProjectsSection = () => {
                 >
                   <a href={project.link} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    View Project
+                    Learn More
                   </a>
                 </Button>
               </CardContent>
