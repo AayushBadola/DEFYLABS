@@ -56,7 +56,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen pt-20 relative">
-      <FloatingBackground variant="minimal" />
+      <FloatingBackground variant="neural" />
       
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
@@ -80,14 +80,10 @@ const About = () => {
                 and Microsoft, I bring a unique perspective to digital growth.
               </p>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 relative z-10">
                 <Button 
                   asChild 
                   className="gradient-bg hover:shadow-lg hover:shadow-sky-500/25"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open('https://www.linkedin.com/in/aayush-badola-0a7b2b343/', '_blank', 'noopener,noreferrer');
-                  }}
                 >
                   <a href="https://www.linkedin.com/in/aayush-badola-0a7b2b343/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="w-4 h-4 mr-2" />
@@ -98,10 +94,6 @@ const About = () => {
                 <Button 
                   variant="outline" 
                   asChild
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open('https://aayush-portfolio-main.vercel.app/', '_blank', 'noopener,noreferrer');
-                  }}
                 >
                   <a href="https://aayush-portfolio-main.vercel.app/" target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="w-4 h-4 mr-2" />
@@ -112,10 +104,6 @@ const About = () => {
                 <Button 
                   variant="outline" 
                   asChild
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.location.href = 'mailto:aayush.badola2@gmail.com';
-                  }}
                 >
                   <a href="mailto:aayush.badola2@gmail.com">
                     <Mail className="w-4 h-4 mr-2" />
