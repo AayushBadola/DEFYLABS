@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Linkedin, Mail, ExternalLink, BookOpen, Award, Brain, Code, Target, Star, TrendingUp, Shield, Search } from "lucide-react";
+import { Linkedin, Mail, ExternalLink, BookOpen, Award, Brain, Code, Target, Star, TrendingUp, Shield, Search, Github } from "lucide-react";
 import { Link } from "react-router-dom";
 import FloatingBackground from "@/components/FloatingBackground";
 
@@ -88,6 +88,16 @@ const About = () => {
                   <a href="https://www.linkedin.com/in/aayush-badola-0a7b2b343/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="w-4 h-4 mr-2" />
                     LinkedIn Profile
+                  </a>
+                </Button>
+                
+                <Button 
+                  variant="outline" 
+                  asChild
+                >
+                  <a href="https://github.com/AayushBadola" target="_blank" rel="noopener noreferrer">
+                    <Github className="w-4 h-4 mr-2" />
+                    GitHub Profile
                   </a>
                 </Button>
                 
