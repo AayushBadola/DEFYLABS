@@ -72,7 +72,7 @@ const Home = () => {
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
               Digital Growth with
-              <span className="block ai-precision-text text-6xl md:text-8xl font-extrabold py-6 my-4">
+              <span className="block ai-precision-text text-6xl md:text-8xl font-extrabold py-4 my-6">
                 AI Precision
               </span>
             </h1>
