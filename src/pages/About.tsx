@@ -50,7 +50,7 @@ const About = () => {
     "1.8 Trillion Parameter AI Development",
     "Multiple Harvard Certifications",
     "Published Research in AI/ML",
-    "200+ Successful Client Projects",
+    "Multiple Successful Client Projects",
     "Advanced Pattern Recognition Expert"
   ];
 
@@ -71,7 +71,7 @@ const About = () => {
               </div>
               
               <h1 className="text-4xl md:text-6xl font-space font-bold text-foreground text-center lg:text-left">
-                Meet <span className="bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text text-transparent">Aayush Badola</span>
+                Meet <span className="bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text text-transparent">Our FOUNDER</span>
               </h1>
               
               <p className="text-xl text-muted-foreground leading-relaxed">
