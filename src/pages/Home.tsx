@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -56,6 +57,14 @@ const Home = () => {
     "Competitive Intelligence"
   ];
 
+  const openCalendly = () => {
+    if ((window as any).Calendly) {
+      (window as any).Calendly.initPopupWidget({
+        url: 'https://calendly.com/aayush-badola2/consultationmeet'
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen relative overflow-hidden">
       <FloatingBackground variant="minimal" />
@@ -86,11 +95,9 @@ const Home = () => {
               <Button 
                 size="lg"
                 className="defy-gradient modern-button-hover px-8 py-6 text-lg"
-                asChild
+                onClick={openCalendly}
               >
-                <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
-                  Start Your Transformation
-                </a>
+                Start Your Transformation
               </Button>
               
               <Button 
@@ -293,11 +300,9 @@ const Home = () => {
             <Button 
               size="lg"
               className="defy-gradient modern-button-hover px-8 py-6 text-lg"
-              asChild
+              onClick={openCalendly}
             >
-              <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
-                Book Free Consultation
-              </a>
+              Book Free Consultation
             </Button>
             <Button 
               variant="outline" 

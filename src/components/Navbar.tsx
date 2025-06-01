@@ -30,6 +30,14 @@ const Navbar = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
+  const openCalendly = () => {
+    if ((window as any).Calendly) {
+      (window as any).Calendly.initPopupWidget({
+        url: 'https://calendly.com/aayush-badola2/consultationmeet'
+      });
+    }
+  };
+
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       scrolled 
@@ -81,12 +89,10 @@ const Navbar = () => {
 
             {/* CTA Button */}
             <Button 
-              asChild
+              onClick={openCalendly}
               className="defy-gradient modern-button-hover transition-all duration-300"
             >
-              <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
-                Book Meeting
-              </a>
+              Book Meeting
             </Button>
           </div>
 
@@ -134,12 +140,10 @@ const Navbar = () => {
                 </Link>
               ))}
               <Button 
-                asChild
+                onClick={openCalendly}
                 className="w-full defy-gradient modern-button-hover"
               >
-                <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
-                  Book Meeting
-                </a>
+                Book Meeting
               </Button>
             </div>
           </div>

@@ -6,6 +6,14 @@ import { Linkedin, Mail } from "lucide-react";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const openCalendly = () => {
+    if ((window as any).Calendly) {
+      (window as any).Calendly.initPopupWidget({
+        url: 'https://calendly.com/aayush-badola2/consultationmeet'
+      });
+    }
+  };
+
   return (
     <footer className="bg-gray-50 dark:bg-gray-900 border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -84,13 +92,11 @@ const Footer = () => {
                 </a>
               </p>
               <Button 
-                asChild
+                onClick={openCalendly}
                 size="sm"
                 className="defy-gradient hover:shadow-lg hover:shadow-purple-500/25 w-full modern-button-hover"
               >
-                <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
-                  Schedule Consultation
-                </a>
+                Schedule Consultation
               </Button>
             </div>
           </div>

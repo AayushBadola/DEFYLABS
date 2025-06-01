@@ -1,8 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ExternalLink, TrendingUp, Shield, Brain, Target, Search, Zap } from "lucide-react";
+import { TrendingUp, Shield, Brain, Target, Search, Zap } from "lucide-react";
 
 const ProjectsSection = () => {
   const projects = [
@@ -13,7 +12,6 @@ const ProjectsSection = () => {
       icon: TrendingUp,
       tags: ["AI/ML", "Market Analysis", "Predictive Analytics"],
       color: "from-blue-400 to-indigo-600",
-      link: "https://calendly.com/aayush-badola2/consultationmeet"
     },
     {
       title: "Financial Fraud Detection",
@@ -22,7 +20,6 @@ const ProjectsSection = () => {
       icon: Shield,
       tags: ["Machine Learning", "Fraud Detection", "Security"],
       color: "from-red-400 to-pink-600",
-      link: "https://calendly.com/aayush-badola2/consultationmeet"
     },
     {
       title: "Content Hook Optimizer",
@@ -31,7 +28,6 @@ const ProjectsSection = () => {
       icon: Brain,
       tags: ["Deep Learning", "Content Strategy", "User Engagement"],
       color: "from-purple-400 to-violet-600",
-      link: "https://calendly.com/aayush-badola2/consultationmeet"
     },
     {
       title: "Conversion Funnel AI",
@@ -40,7 +36,6 @@ const ProjectsSection = () => {
       icon: Target,
       tags: ["AI Optimization", "SEO", "Conversion Rate"],
       color: "from-green-400 to-emerald-600",
-      link: "https://calendly.com/aayush-badola2/consultationmeet"
     },
     {
       title: "Product Market Predictor",
@@ -49,7 +44,6 @@ const ProjectsSection = () => {
       icon: Search,
       tags: ["Market Research", "AI Analysis", "Product Strategy"],
       color: "from-orange-400 to-red-600",
-      link: "https://calendly.com/aayush-badola2/consultationmeet"
     },
     {
       title: "Business Growth Accelerator",
@@ -58,7 +52,6 @@ const ProjectsSection = () => {
       icon: Zap,
       tags: ["AI Platform", "Business Growth", "Analytics"],
       color: "from-cyan-400 to-blue-600",
-      link: "https://calendly.com/aayush-badola2/consultationmeet"
     }
   ];
 
@@ -78,7 +71,7 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.title}
-              className="group service-card-hover transition-all duration-700 border-0 overflow-hidden animate-scale-in cursor-pointer"
+              className="group service-card-hover transition-all duration-700 border-0 overflow-hidden animate-scale-in"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <div className="relative overflow-hidden">
@@ -104,25 +97,13 @@ const ProjectsSection = () => {
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <Badge key={tag} variant="secondary" className="text-xs">
                       {tag}
                     </Badge>
                   ))}
                 </div>
-
-                <Button 
-                  size="sm" 
-                  variant="outline"
-                  className="w-full group-hover:bg-purple-50 dark:group-hover:bg-purple-950 transition-colors"
-                  asChild
-                >
-                  <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Learn More
-                  </a>
-                </Button>
               </CardContent>
             </Card>
           ))}
