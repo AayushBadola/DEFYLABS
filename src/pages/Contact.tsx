@@ -29,6 +29,14 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const openCalendly = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/aayush-badola2/consultationmeet'
+      });
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -79,7 +87,7 @@ const Contact = () => {
       title: "Schedule Meeting",
       description: "Book a consultation call",
       value: "Calendly",
-      action: "https://calendly.com/aayush-badola2/consultationmeet",
+      action: "calendly",
       gradient: "from-green-400 to-green-600"
     },
     {
@@ -132,7 +140,13 @@ const Contact = () => {
                 key={method.title}
                 className="group hover:shadow-xl hover:shadow-sky-500/10 transition-all duration-300 transform hover:-translate-y-2 border-0 cursor-pointer animate-scale-in"
                 style={{ animationDelay: `${index * 150}ms` }}
-                onClick={() => window.open(method.action, method.title === "Email" ? "_self" : "_blank")}
+                onClick={() => {
+                  if (method.action === "calendly") {
+                    openCalendly();
+                  } else {
+                    window.open(method.action, method.title === "Email" ? "_self" : "_blank");
+                  }
+                }}
               >
                 <CardContent className="p-6 text-center">
                   <div className={`w-16 h-16 bg-gradient-to-br ${method.gradient} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
@@ -310,11 +324,14 @@ const Contact = () => {
                     <p className="text-muted-foreground mb-3">
                       Book a complimentary strategy session to discuss your goals and explore opportunities.
                     </p>
-                    <Button asChild variant="outline" size="sm" className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950">
-                      <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
-                        <Calendar className="w-4 h-4 mr-2" />
-                        Schedule Now
-                      </a>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950"
+                      onClick={openCalendly}
+                    >
+                      <Calendar className="w-4 h-4 mr-2" />
+                      Schedule Now
                     </Button>
                   </div>
                 </div>
@@ -379,12 +396,10 @@ const Contact = () => {
           <Button 
             size="lg"
             className="gradient-bg hover:shadow-xl hover:shadow-sky-500/25 transform hover:scale-105 transition-all duration-300 px-8 py-6 animate-scale-in"
-            asChild
+            onClick={openCalendly}
           >
-            <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
-              <Calendar className="w-5 h-5 mr-2" />
-              Book Your Free Consultation
-            </a>
+            <Calendar className="w-5 h-5 mr-2" />
+            Book Your Free Consultation
           </Button>
         </div>
       </section>
