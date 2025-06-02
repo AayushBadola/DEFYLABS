@@ -1,8 +1,18 @@
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://defy-labs.vercel.app/sitemap.xml
+
+# Specific bot permissions
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -10,5 +20,15 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+# Block unnecessary crawling
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all images
+User-agent: Googlebot-Image
 Allow: /
+
+# Host directive
+Host: https://defy-labs.vercel.app
