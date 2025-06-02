@@ -17,6 +17,14 @@ import ServiceCard from "@/components/ServiceCard";
 import FloatingBackground from "@/components/FloatingBackground";
 
 const Services = () => {
+  const openCalendly = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/aayush-badola2/consultationmeet'
+      });
+    }
+  };
+
   const services = [
     {
       title: "SEO Optimization",
@@ -299,11 +307,9 @@ const Services = () => {
           <Button 
             size="lg"
             className="defy-gradient modern-button-hover px-8 py-6"
-            asChild
+            onClick={openCalendly}
           >
-            <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
-              Get Started Today
-            </a>
+            Get Started Today
           </Button>
         </div>
       </section>
@@ -436,21 +442,17 @@ const Services = () => {
             <Button 
               size="lg"
               className="defy-gradient modern-button-hover px-8 py-6"
-              asChild
+              onClick={openCalendly}
             >
-              <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
-                Book Free Consultation
-              </a>
+              Book Free Consultation
             </Button>
             <Button 
               variant="outline" 
               size="lg"
               className="border-purple-500 text-purple-500 hover:bg-purple-50 dark:hover:bg-purple-950 px-8 py-6 modern-button-hover"
-              asChild
+              onClick={openCalendly}
             >
-              <a href="/contact">
-                Get Custom Quote
-              </a>
+              Get Custom Quote
             </Button>
           </div>
         </div>
