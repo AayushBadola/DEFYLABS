@@ -6,6 +6,14 @@ import { Link } from "react-router-dom";
 import FloatingBackground from "@/components/FloatingBackground";
 
 const About = () => {
+  const openCalendly = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/aayush-badola2/consultationmeet'
+      });
+    }
+  };
+
   const certifications = [
     "Harvard University - Data Science",
     "Google Cloud - Machine Learning",
@@ -196,7 +204,7 @@ const About = () => {
                 key={project.title}
                 className="group hover:shadow-xl hover:shadow-sky-500/10 transition-all duration-300 transform hover:-translate-y-2 border-0 animate-scale-in cursor-pointer"
                 style={{ animationDelay: `${index * 150}ms` }}
-                onClick={() => window.open(project.link, '_blank')}
+                onClick={openCalendly}
               >
                 <CardContent className="p-8">
                   <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -221,11 +229,9 @@ const About = () => {
 
           <div className="text-center mt-12">
             <p className="text-lg text-muted-foreground mb-6">And many more innovative business solutions...</p>
-            <Button asChild variant="outline" className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950">
-              <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Schedule Consultation
-              </a>
+            <Button onClick={openCalendly} variant="outline" className="border-sky-500 text-sky-500 hover:bg-sky-50 dark:hover:bg-sky-950">
+              <ExternalLink className="w-4 h-4 mr-2" />
+              Schedule Consultation
             </Button>
           </div>
         </div>
@@ -330,11 +336,9 @@ const About = () => {
             <Button 
               size="lg"
               className="gradient-bg hover:shadow-xl hover:shadow-sky-500/25 transform hover:scale-105 transition-all duration-300 px-8 py-6"
-              asChild
+              onClick={openCalendly}
             >
-              <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
-                Schedule Consultation
-              </a>
+              Schedule Consultation
             </Button>
             <Button 
               variant="outline" 

@@ -28,6 +28,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const openCalendly = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/aayush-badola2/consultationmeet'
+      });
+    }
+  };
+
   return (
     <Card 
       className="group service-card-hover transition-all duration-700 border-0 overflow-hidden animate-scale-in cursor-pointer"
@@ -113,11 +121,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           <Button 
             size="sm" 
             className="w-full gradient-bg modern-hover transition-all duration-300"
-            asChild
+            onClick={(e) => {
+              e.stopPropagation();
+              openCalendly();
+            }}
           >
-            <a href="https://calendly.com/aayush-badola2/consultationmeet" target="_blank" rel="noopener noreferrer">
-              Get Custom Quote
-            </a>
+            Get Custom Quote
           </Button>
         </div>
       </CardContent>
