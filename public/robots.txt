@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://defy-labs.vercel.app/sitemap.xml
+Sitemap: https://defylabs.vercel.app/sitemap.xml
 
 # Specific bot permissions
 User-agent: Googlebot
@@ -31,4 +31,4 @@ User-agent: Googlebot-Image
 Allow: /
 
 # Host directive
-Host: https://defy-labs.vercel.app
+Host: https://defylabs.vercel.app
