@@ -663,6 +663,70 @@
       filter: drop-shadow(0 0 16px rgba(168, 85, 247, 0.6)) drop-shadow(0 0 24px rgba(192, 132, 252, 0.3));
     }
   }
+
+  /* NEW: Scroll-triggered AI Precision Animation */
+  .ai-precision-initial {
+    display: inline-block;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    transform: translateX(-100%);
+    background: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: currentColor;
+    background-clip: text;
+  }
+
+  .ai-precision-scroll-trigger {
+    display: inline-block;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #a855f7, #c084fc, #e879f9, #f472b6, #06b6d4, #3b82f6);
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: 
+      slide-in-left 1.2s ease-out,
+      dynamic-gradient 4s ease-in-out infinite 1.2s,
+      text-pulse 6s ease-in-out infinite 1.5s;
+    position: relative;
+    overflow: hidden;
+    transform-origin: left center;
+  }
+
+  .ai-precision-scroll-trigger::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.4), 
+      rgba(168, 85, 247, 0.3),
+      rgba(255, 255, 255, 0.4), 
+      transparent
+    );
+    animation: dynamic-sweep 3s ease-in-out infinite 2s;
+    z-index: 1;
+  }
+
+  .ai-precision-final {
+    background: linear-gradient(135deg, #a855f7, #c084fc, #e879f9, #f472b6) !important;
+    background-size: 200% 200% !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .ai-precision-final::before {
+    display: none !important;
+  }
 }
 
 @layer utilities {

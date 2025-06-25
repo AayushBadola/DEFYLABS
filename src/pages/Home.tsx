@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -6,6 +5,7 @@ import { ArrowDown, Star, Users, Zap, Target, TrendingUp, Brain } from "lucide-r
 import { Link } from "react-router-dom";
 import FloatingBackground from "@/components/FloatingBackground";
 import ProjectsSection from "@/components/ProjectsSection";
+import AIPrecisionText from "@/components/AIPrecionText";
 
 const Home = () => {
   const stats = [
@@ -81,8 +81,8 @@ const Home = () => {
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
               Digital Growth with
-              <span className="block ai-precision-dynamic text-6xl md:text-8xl font-extrabold py-4 my-6">
-                AI Precision
+              <span className="block text-6xl md:text-8xl font-extrabold py-4 my-6">
+                <AIPrecisionText />
               </span>
             </h1>
             
@@ -150,7 +150,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Our <span className="ai-precision-dynamic">Services</span>
+              Our <AIPrecisionText>Services</AIPrecisionText>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Comprehensive digital solutions enhanced by cutting-edge AI technology
