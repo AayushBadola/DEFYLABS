@@ -81,7 +81,7 @@ const Home = () => {
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
               Digital Growth with
-              <span className="block ai-precision-text text-6xl md:text-8xl font-extrabold py-4 my-6">
+              <span className="block ai-precision-dynamic text-6xl md:text-8xl font-extrabold py-4 my-6">
                 AI Precision
               </span>
             </h1>
@@ -141,75 +141,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why We're Unique Section */}
-      <section className="py-20 relative">
-        <FloatingBackground variant="neural" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-16 animate-slide-down">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Why We're <span className="ai-precision-text">Unique</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We're not just another digital agency. We're pioneers using AI to enhance our expertise and deliver superior results.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-slide-up">
-              <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 defy-gradient rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300">
-                  <Brain className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">1.8 Trillion Parameter AI Assistant</h3>
-                  <p className="text-muted-foreground">
-                    Our custom-curated AI assists us in processing data at unprecedented scale, 
-                    helping us deliver insights that traditional methods simply cannot match.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 defy-gradient rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300">
-                  <Zap className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">AI-Enhanced Optimization</h3>
-                  <p className="text-muted-foreground">
-                    Using AI to assist in continuously monitoring and optimizing your campaigns, 
-                    we make data-driven adjustments 24/7 for maximum performance.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 defy-gradient rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300">
-                  <Target className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">Precision Targeting</h3>
-                  <p className="text-muted-foreground">
-                    Advanced AI-assisted pattern recognition helps us identify and target 
-                    your ideal customers with surgical precision.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative animate-fade-in">
-              <div className="glass-effect rounded-3xl p-8 backdrop-blur-sm group hover:scale-105 transition-all duration-500">
-                <img 
-                  src="/lovable-uploads/af53e2ec-1d90-428b-9862-95c85dbcc7fc.png" 
-                  alt="AI Brain Technology" 
-                  className="rounded-2xl w-full h-80 object-cover group-hover:scale-105 transition-all duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-transparent rounded-3xl"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Projects Section */}
       <ProjectsSection />
 
@@ -219,7 +150,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Our <span className="ai-precision-text">Services</span>
+              Our <span className="ai-precision-dynamic">Services</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Comprehensive digital solutions enhanced by cutting-edge AI technology
