@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import PageParticles from "@/components/PageParticles";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Services from "@/pages/Services";
@@ -24,7 +25,8 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
-          <div className="min-h-screen flex flex-col">
+          <PageParticles />
+          <div className="min-h-screen flex flex-col relative z-10">
             <Navbar />
             <main className="flex-1">
               <Routes>
