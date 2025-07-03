@@ -77,19 +77,24 @@ const ProjectsSection = () => {
               key={project.title}
               animationType="slideUp"
               delay={index * 0.1}
-              duration={0.6}
+              duration={0.5}
             >
-              <Card className="group hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 border-0 overflow-hidden hover:-translate-y-2">
-                <div className="relative overflow-hidden">
+              <Card className="group hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 border-0 overflow-hidden hover:-translate-y-1">
+                <div className="relative overflow-hidden h-48">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-all duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
                     loading="lazy"
+                    onError={(e) => {
+                      console.log(`Failed to load image for ${project.title}`);
+                      // Fallback to a different image or placeholder
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=800&q=80";
+                    }}
                   />
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20 group-hover:opacity-30 transition-opacity duration-300`}></div>
                   <div className="absolute top-4 right-4">
-                    <div className={`w-12 h-12 bg-gradient-to-br ${project.color} rounded-full flex items-center justify-center`}>
+                    <div className={`w-12 h-12 bg-gradient-to-br ${project.color} rounded-full flex items-center justify-center shadow-lg`}>
                       <project.icon className="w-6 h-6 text-white" />
                     </div>
                   </div>

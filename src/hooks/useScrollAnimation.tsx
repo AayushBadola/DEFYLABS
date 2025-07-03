@@ -20,7 +20,7 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
     triggerOnce = true, 
     animationType = 'fade',
     delay = 0,
-    duration = 1
+    duration = 0.6
   } = options;
   
   const [isVisible, setIsVisible] = useState(false);
@@ -31,75 +31,85 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
     const element = elementRef.current;
     if (!element) return;
 
-    const tl = gsap.timeline({ paused: true });
-    
-    // Set initial states based on animation type
+    // Set initial states based on animation type (no blinking)
     switch (animationType) {
       case 'slideLeft':
-        gsap.set(element, { x: -100, opacity: 0 });
-        tl.to(element, { x: 0, opacity: 1, duration, ease: "power3.out", delay });
+        gsap.set(element, { x: -50, opacity: 0 });
         break;
         
       case 'slideRight':
-        gsap.set(element, { x: 100, opacity: 0 });
-        tl.to(element, { x: 0, opacity: 1, duration, ease: "power3.out", delay });
+        gsap.set(element, { x: 50, opacity: 0 });
         break;
         
       case 'slideUp':
-        gsap.set(element, { y: 50, opacity: 0 });
-        tl.to(element, { y: 0, opacity: 1, duration, ease: "power3.out", delay });
+        gsap.set(element, { y: 30, opacity: 0 });
         break;
         
       case 'slideDown':
-        gsap.set(element, { y: -50, opacity: 0 });
-        tl.to(element, { y: 0, opacity: 1, duration, ease: "power3.out", delay });
+        gsap.set(element, { y: -30, opacity: 0 });
         break;
         
       case 'scale':
-        gsap.set(element, { scale: 0.8, opacity: 0 });
-        tl.to(element, { scale: 1, opacity: 1, duration, ease: "back.out(1.7)", delay });
+        gsap.set(element, { scale: 0.95, opacity: 0 });
         break;
         
       case 'rotate':
-        gsap.set(element, { rotation: -10, scale: 0.9, opacity: 0 });
-        tl.to(element, { rotation: 0, scale: 1, opacity: 1, duration, ease: "power3.out", delay });
+        gsap.set(element, { rotation: -5, scale: 0.95, opacity: 0 });
         break;
         
       case 'aiPrecision':
-        gsap.set(element, { x: -100, opacity: 0, scale: 0.8 });
-        tl.to(element, {
-          x: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 1.2,
-          ease: "power3.out",
-          onComplete: () => setAnimationComplete(true)
-        })
-        .to(element, {
-          backgroundPosition: "200% center",
-          duration: 2,
-          ease: "power2.inOut",
-          repeat: -1,
-          yoyo: true
-        }, "-=0.5");
+        gsap.set(element, { x: -30, opacity: 0, scale: 0.95 });
         break;
         
       default: // fade
         gsap.set(element, { opacity: 0 });
-        tl.to(element, { opacity: 1, duration, ease: "power2.out", delay });
     }
 
-    // ScrollTrigger setup - declare trigger variable properly
-    let scrollTrigger: ScrollTrigger | null = null;
-    
-    scrollTrigger = ScrollTrigger.create({
+    const scrollTrigger = ScrollTrigger.create({
       trigger: element,
       start: "top 85%",
       onEnter: () => {
         setIsVisible(true);
-        tl.play();
         
-        if (triggerOnce && scrollTrigger) {
+        // Create and play animation
+        const tl = gsap.timeline();
+        
+        switch (animationType) {
+          case 'slideLeft':
+          case 'slideRight':
+            tl.to(element, { x: 0, opacity: 1, duration, ease: "power2.out", delay });
+            break;
+            
+          case 'slideUp':
+          case 'slideDown':
+            tl.to(element, { y: 0, opacity: 1, duration, ease: "power2.out", delay });
+            break;
+            
+          case 'scale':
+            tl.to(element, { scale: 1, opacity: 1, duration, ease: "back.out(1.2)", delay });
+            break;
+            
+          case 'rotate':
+            tl.to(element, { rotation: 0, scale: 1, opacity: 1, duration, ease: "power2.out", delay });
+            break;
+            
+          case 'aiPrecision':
+            tl.to(element, {
+              x: 0,
+              opacity: 1,
+              scale: 1,
+              duration: 0.8,
+              ease: "power2.out",
+              delay,
+              onComplete: () => setAnimationComplete(true)
+            });
+            break;
+            
+          default: // fade
+            tl.to(element, { opacity: 1, duration, ease: "power2.out", delay });
+        }
+        
+        if (triggerOnce) {
           scrollTrigger.kill();
         }
       },
@@ -107,13 +117,22 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
         if (!triggerOnce) {
           setIsVisible(false);
           setAnimationComplete(false);
-          tl.pause().progress(0);
+          // Reset to initial state
+          switch (animationType) {
+            case 'slideLeft': gsap.set(element, { x: -50, opacity: 0 }); break;
+            case 'slideRight': gsap.set(element, { x: 50, opacity: 0 }); break;
+            case 'slideUp': gsap.set(element, { y: 30, opacity: 0 }); break;
+            case 'slideDown': gsap.set(element, { y: -30, opacity: 0 }); break;
+            case 'scale': gsap.set(element, { scale: 0.95, opacity: 0 }); break;
+            case 'rotate': gsap.set(element, { rotation: -5, scale: 0.95, opacity: 0 }); break;
+            case 'aiPrecision': gsap.set(element, { x: -30, opacity: 0, scale: 0.95 }); break;
+            default: gsap.set(element, { opacity: 0 });
+          }
         }
       }
     });
 
     return () => {
-      tl.kill();
       if (scrollTrigger) {
         scrollTrigger.kill();
       }

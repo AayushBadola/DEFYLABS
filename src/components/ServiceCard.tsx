@@ -31,7 +31,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   const { elementRef } = useScrollAnimation({
     animationType: 'slideUp',
     delay: delay,
-    duration: 0.6,
+    duration: 0.5,
     triggerOnce: true
   });
 
@@ -46,22 +46,22 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   return (
     <div ref={elementRef}>
       <Card 
-        className="group hover:shadow-xl transition-all duration-500 border-0 overflow-hidden cursor-pointer hover:-translate-y-2"
+        className="group hover:shadow-xl transition-all duration-300 border-0 overflow-hidden cursor-pointer hover:-translate-y-1"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <CardHeader className="relative pb-0">
-          <div className={`w-16 h-16 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-all duration-300`}>
+          <div className={`w-16 h-16 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-all duration-200`}>
             <Icon className="w-8 h-8 text-white" />
           </div>
           
           <div className="flex items-center justify-between">
-            <CardTitle className="text-xl font-bold text-foreground group-hover:text-purple-500 transition-colors duration-300">
+            <CardTitle className="text-xl font-bold text-foreground group-hover:text-purple-500 transition-colors duration-200">
               {title}
             </CardTitle>
             {isExpanded ? (
-              <ChevronUp className="w-5 h-5 text-purple-500 transition-transform duration-300" />
+              <ChevronUp className="w-5 h-5 text-purple-500 transition-transform duration-200" />
             ) : (
-              <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-purple-500 transition-all duration-300" />
+              <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-purple-500 transition-all duration-200" />
             )}
           </div>
           
@@ -81,7 +81,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           </div>
 
           {isExpanded && (
-            <div className="space-y-6 animate-fade-in">
+            <div className="space-y-6 opacity-0 animate-fade-in" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
               <div>
                 <h4 className="font-semibold text-foreground mb-3">Complete Features:</h4>
                 <div className="grid grid-cols-1 gap-2">
@@ -127,7 +127,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             
             <Button 
               size="sm" 
-              className="w-full defy-gradient hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+              className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white transition-all duration-200"
               onClick={(e) => {
                 e.stopPropagation();
                 openCalendly();
