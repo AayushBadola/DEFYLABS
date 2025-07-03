@@ -89,16 +89,18 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
         tl.to(element, { opacity: 1, duration, ease: "power2.out", delay });
     }
 
-    // ScrollTrigger setup
-    const trigger = ScrollTrigger.create({
+    // ScrollTrigger setup - declare trigger variable properly
+    let scrollTrigger: ScrollTrigger | null = null;
+    
+    scrollTrigger = ScrollTrigger.create({
       trigger: element,
       start: "top 85%",
       onEnter: () => {
         setIsVisible(true);
         tl.play();
         
-        if (triggerOnce) {
-          trigger.kill();
+        if (triggerOnce && scrollTrigger) {
+          scrollTrigger.kill();
         }
       },
       onLeave: () => {
@@ -112,7 +114,9 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
 
     return () => {
       tl.kill();
-      trigger.kill();
+      if (scrollTrigger) {
+        scrollTrigger.kill();
+      }
     };
   }, [threshold, triggerOnce, animationType, delay, duration]);
 
