@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ChevronDown, ChevronUp } from "lucide-react";
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 interface ServiceCardProps {
   title: string;
@@ -27,6 +28,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   delay = 0
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const { elementRef } = useScrollAnimation({
+    animationType: 'scale',
+    delay: delay,
+    duration: 0.8,
+    triggerOnce: true
+  });
 
   const openCalendly = () => {
     if (window.Calendly) {
@@ -38,8 +45,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
   return (
     <Card 
-      className="group service-card-hover transition-all duration-700 border-0 overflow-hidden animate-scale-in cursor-pointer"
-      style={{ animationDelay: `${delay}ms` }}
+      ref={elementRef}
+      className="group service-card-hover transition-all duration-700 border-0 overflow-hidden cursor-pointer"
       onClick={() => setIsExpanded(!isExpanded)}
     >
       <CardHeader className="relative pb-0">

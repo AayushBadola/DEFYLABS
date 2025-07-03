@@ -9,10 +9,20 @@ gsap.registerPlugin(ScrollTrigger);
 interface UseScrollAnimationOptions {
   threshold?: number;
   triggerOnce?: boolean;
+  animationType?: 'slideLeft' | 'slideRight' | 'slideUp' | 'slideDown' | 'fade' | 'scale' | 'rotate' | 'aiPrecision';
+  delay?: number;
+  duration?: number;
 }
 
 export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
-  const { threshold = 0.1, triggerOnce = true } = options;
+  const { 
+    threshold = 0.1, 
+    triggerOnce = true, 
+    animationType = 'fade',
+    delay = 0,
+    duration = 1
+  } = options;
+  
   const [isVisible, setIsVisible] = useState(false);
   const [animationComplete, setAnimationComplete] = useState(false);
   const elementRef = useRef<HTMLElement>(null);
@@ -21,45 +31,74 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
     const element = elementRef.current;
     if (!element) return;
 
-    // GSAP Timeline for complex animations
     const tl = gsap.timeline({ paused: true });
     
-    // Initial state
-    gsap.set(element, {
-      x: -100,
-      opacity: 0,
-      scale: 0.8,
-    });
-
-    // Animation sequence
-    tl.to(element, {
-      x: 0,
-      opacity: 1,
-      scale: 1,
-      duration: 1.2,
-      ease: "power3.out",
-      onComplete: () => {
-        setAnimationComplete(true);
-      }
-    })
-    .to(element, {
-      backgroundPosition: "200% center",
-      duration: 2,
-      ease: "power2.inOut",
-      repeat: -1,
-      yoyo: true
-    }, "-=0.5");
+    // Set initial states based on animation type
+    switch (animationType) {
+      case 'slideLeft':
+        gsap.set(element, { x: -100, opacity: 0 });
+        tl.to(element, { x: 0, opacity: 1, duration, ease: "power3.out", delay });
+        break;
+        
+      case 'slideRight':
+        gsap.set(element, { x: 100, opacity: 0 });
+        tl.to(element, { x: 0, opacity: 1, duration, ease: "power3.out", delay });
+        break;
+        
+      case 'slideUp':
+        gsap.set(element, { y: 50, opacity: 0 });
+        tl.to(element, { y: 0, opacity: 1, duration, ease: "power3.out", delay });
+        break;
+        
+      case 'slideDown':
+        gsap.set(element, { y: -50, opacity: 0 });
+        tl.to(element, { y: 0, opacity: 1, duration, ease: "power3.out", delay });
+        break;
+        
+      case 'scale':
+        gsap.set(element, { scale: 0.8, opacity: 0 });
+        tl.to(element, { scale: 1, opacity: 1, duration, ease: "back.out(1.7)", delay });
+        break;
+        
+      case 'rotate':
+        gsap.set(element, { rotation: -10, scale: 0.9, opacity: 0 });
+        tl.to(element, { rotation: 0, scale: 1, opacity: 1, duration, ease: "power3.out", delay });
+        break;
+        
+      case 'aiPrecision':
+        gsap.set(element, { x: -100, opacity: 0, scale: 0.8 });
+        tl.to(element, {
+          x: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1.2,
+          ease: "power3.out",
+          onComplete: () => setAnimationComplete(true)
+        })
+        .to(element, {
+          backgroundPosition: "200% center",
+          duration: 2,
+          ease: "power2.inOut",
+          repeat: -1,
+          yoyo: true
+        }, "-=0.5");
+        break;
+        
+      default: // fade
+        gsap.set(element, { opacity: 0 });
+        tl.to(element, { opacity: 1, duration, ease: "power2.out", delay });
+    }
 
     // ScrollTrigger setup
-    ScrollTrigger.create({
+    const trigger = ScrollTrigger.create({
       trigger: element,
-      start: "top 80%",
+      start: "top 85%",
       onEnter: () => {
         setIsVisible(true);
         tl.play();
         
         if (triggerOnce) {
-          ScrollTrigger.getById('ai-precision-trigger')?.kill();
+          trigger.kill();
         }
       },
       onLeave: () => {
@@ -68,15 +107,14 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
           setAnimationComplete(false);
           tl.pause().progress(0);
         }
-      },
-      id: 'ai-precision-trigger'
+      }
     });
 
     return () => {
       tl.kill();
-      ScrollTrigger.getById('ai-precision-trigger')?.kill();
+      trigger.kill();
     };
-  }, [threshold, triggerOnce]);
+  }, [threshold, triggerOnce, animationType, delay, duration]);
 
   return { elementRef, isVisible, animationComplete };
 };
