@@ -25,7 +25,7 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
   
   const [isVisible, setIsVisible] = useState(false);
   const [animationComplete, setAnimationComplete] = useState(false);
-  const elementRef = useRef<HTMLElement>(null);
+  const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const element = elementRef.current;
