@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -28,9 +29,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { elementRef } = useScrollAnimation({
-    animationType: 'scale',
+    animationType: 'slideUp',
     delay: delay,
-    duration: 0.8,
+    duration: 0.6,
     triggerOnce: true
   });
 
@@ -45,7 +46,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   return (
     <div ref={elementRef}>
       <Card 
-        className="group service-card-hover transition-all duration-700 border-0 overflow-hidden cursor-pointer"
+        className="group hover:shadow-xl transition-all duration-500 border-0 overflow-hidden cursor-pointer hover:-translate-y-2"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <CardHeader className="relative pb-0">
@@ -54,13 +55,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           </div>
           
           <div className="flex items-center justify-between">
-            <CardTitle className="text-xl font-bold text-foreground group-hover:text-sky-500 transition-colors duration-300">
+            <CardTitle className="text-xl font-bold text-foreground group-hover:text-purple-500 transition-colors duration-300">
               {title}
             </CardTitle>
             {isExpanded ? (
-              <ChevronUp className="w-5 h-5 text-sky-500 transition-transform duration-300" />
+              <ChevronUp className="w-5 h-5 text-purple-500 transition-transform duration-300" />
             ) : (
-              <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-sky-500 transition-all duration-300" />
+              <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-purple-500 transition-all duration-300" />
             )}
           </div>
           
@@ -98,7 +99,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
                 <div className="grid grid-cols-1 gap-2">
                   {benefits.map((benefit, idx) => (
                     <div key={benefit} className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-sky-500 rounded-full flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-purple-500 rounded-full flex-shrink-0"></div>
                       <span className="text-xs text-muted-foreground">{benefit}</span>
                     </div>
                   ))}
@@ -110,7 +111,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
                 <div className="space-y-2">
                   {process.map((step, idx) => (
                     <div key={step} className="flex items-start space-x-2">
-                      <span className="text-xs font-bold text-sky-500 mt-0.5">{idx + 1}.</span>
+                      <span className="text-xs font-bold text-purple-500 mt-0.5">{idx + 1}.</span>
                       <span className="text-xs text-muted-foreground">{step}</span>
                     </div>
                   ))}
@@ -126,7 +127,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             
             <Button 
               size="sm" 
-              className="w-full gradient-bg modern-hover transition-all duration-300"
+              className="w-full defy-gradient hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
               onClick={(e) => {
                 e.stopPropagation();
                 openCalendly();

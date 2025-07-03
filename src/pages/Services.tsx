@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,6 +16,7 @@ import {
 } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import FloatingBackground from "@/components/FloatingBackground";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const Services = () => {
   const openCalendly = () => {
@@ -292,25 +294,31 @@ const Services = () => {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-pink-50/50 dark:from-purple-950/30 dark:to-pink-950/30"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <Badge variant="secondary" className="px-4 py-2 mb-6 floating-badge">
-            AI-Enhanced Solutions
-          </Badge>
+          <AnimatedSection animationType="fade" delay={0.2}>
+            <Badge variant="secondary" className="px-4 py-2 mb-6">
+              AI-Enhanced Solutions
+            </Badge>
+          </AnimatedSection>
           
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 animate-slide-down">
-            Our <span className="ai-precision-text">Services</span>
-          </h1>
+          <AnimatedSection animationType="slideUp" delay={0.4}>
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+              Our <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Services</span>
+            </h1>
+          </AnimatedSection>
           
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in">
-            Comprehensive digital solutions enhanced by cutting-edge AI technology to accelerate your business growth.
-          </p>
+          <AnimatedSection animationType="fade" delay={0.6}>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              Comprehensive digital solutions enhanced by cutting-edge AI technology to accelerate your business growth.
+            </p>
 
-          <Button 
-            size="lg"
-            className="defy-gradient modern-button-hover px-8 py-6"
-            onClick={openCalendly}
-          >
-            Get Started Today
-          </Button>
+            <Button 
+              size="lg"
+              className="defy-gradient hover:shadow-lg hover:shadow-purple-500/25 px-8 py-6 transition-all duration-300"
+              onClick={openCalendly}
+            >
+              Get Started Today
+            </Button>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -329,7 +337,7 @@ const Services = () => {
                 benefits={service.benefits}
                 process={service.process}
                 gradient={service.gradient}
-                delay={index * 150}
+                delay={index * 0.1}
               />
             ))}
           </div>
@@ -340,39 +348,43 @@ const Services = () => {
       <section className="py-20 relative">
         <FloatingBackground variant="neural" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-16 animate-slide-down">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Our <span className="ai-precision-text">Process</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A proven methodology that delivers exceptional results for every client.
-            </p>
-          </div>
+          <AnimatedSection animationType="slideUp">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                Our <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Process</span>
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                A proven methodology that delivers exceptional results for every client.
+              </p>
+            </div>
+          </AnimatedSection>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-            {/* Connection lines - positioned behind circles */}
+            {/* Connection lines */}
             <div className="hidden lg:block absolute top-10 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-purple-300 to-purple-500 z-0" style={{ left: '12.5%', right: '12.5%' }}></div>
             
             {processSteps.map((step, index) => (
-              <div 
+              <AnimatedSection
                 key={step.step}
-                className="text-center group animate-scale-in floating-orb relative z-10"
-                style={{ animationDelay: `${index * 200}ms` }}
+                animationType="slideUp"
+                delay={index * 0.2}
               >
-                <div className="relative mb-8">
-                  <div className="w-20 h-20 defy-gradient rounded-full flex items-center justify-center mx-auto group-hover:scale-105 transition-all duration-300 relative z-20 border-4 border-white dark:border-gray-900">
-                    <span className="text-2xl font-bold text-white">{step.step}</span>
+                <div className="text-center group relative z-10">
+                  <div className="relative mb-8">
+                    <div className="w-20 h-20 defy-gradient rounded-full flex items-center justify-center mx-auto group-hover:scale-105 transition-all duration-300 relative z-20 border-4 border-white dark:border-gray-900">
+                      <span className="text-2xl font-bold text-white">{step.step}</span>
+                    </div>
                   </div>
+                  
+                  <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-purple-500 transition-colors">
+                    {step.title}
+                  </h3>
+                  
+                  <p className="text-muted-foreground">
+                    {step.description}
+                  </p>
                 </div>
-                
-                <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-purple-500 transition-colors">
-                  {step.title}
-                </h3>
-                
-                <p className="text-muted-foreground">
-                  {step.description}
-                </p>
-              </div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -381,48 +393,50 @@ const Services = () => {
       {/* Why Choose Us */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50/50 dark:from-gray-900 dark:to-purple-950/30 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-slide-down">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Why Choose <span className="ai-precision-text">DEFY LABS</span>
-            </h2>
-          </div>
+          <AnimatedSection animationType="slideUp">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                Why Choose <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">DEFY LABS</span>
+              </h2>
+            </div>
+          </AnimatedSection>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="group transition-all duration-500 border-0 animate-slide-up hover:scale-105 floating-orb">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 defy-gradient rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
-                  <Brain className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-4">AI-Enhanced Intelligence</h3>
-                <p className="text-muted-foreground">
-                  Our 1.8 trillion parameter AI assists us in providing insights and optimizations impossible with traditional methods.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group transition-all duration-500 border-0 animate-scale-in hover:scale-105 floating-orb" style={{ animationDelay: '200ms' }}>
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 defy-gradient rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-4">Proven Results</h3>
-                <p className="text-muted-foreground">
-                  Multiple successful projects with an average growth rate of 70% for our clients.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group transition-all duration-500 border-0 animate-slide-up hover:scale-105 floating-orb" style={{ animationDelay: '400ms' }}>
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 defy-gradient rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
-                  <Zap className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-4">24/7 Optimization</h3>
-                <p className="text-muted-foreground">
-                  Continuous monitoring and real-time optimization ensure maximum performance around the clock.
-                </p>
-              </CardContent>
-            </Card>
+            {[
+              {
+                icon: Brain,
+                title: "AI-Enhanced Intelligence",
+                description: "Our 1.8 trillion parameter AI assists us in providing insights and optimizations impossible with traditional methods."
+              },
+              {
+                icon: Users,
+                title: "Proven Results",
+                description: "Multiple successful projects with an average growth rate of 70% for our clients."
+              },
+              {
+                icon: Zap,
+                title: "24/7 Optimization",
+                description: "Continuous monitoring and real-time optimization ensure maximum performance around the clock."
+              }
+            ].map((item, index) => (
+              <AnimatedSection
+                key={item.title}
+                animationType="slideUp"
+                delay={index * 0.2}
+              >
+                <Card className="group transition-all duration-500 border-0 hover:scale-105 hover:shadow-xl">
+                  <CardContent className="p-8 text-center">
+                    <div className="w-16 h-16 defy-gradient rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
+                      <item.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-4">{item.title}</h3>
+                    <p className="text-muted-foreground">
+                      {item.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>
@@ -432,29 +446,31 @@ const Services = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-purple-100/50 to-pink-100/50 dark:from-purple-950/50 dark:to-pink-950/50"></div>
         <FloatingBackground variant="default" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 animate-slide-down">
-            Ready to Accelerate Your Growth?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 animate-fade-in">
-            Join hundreds of businesses that have transformed their results with our AI-enhanced solutions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
-            <Button 
-              size="lg"
-              className="defy-gradient modern-button-hover px-8 py-6"
-              onClick={openCalendly}
-            >
-              Book Free Consultation
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-purple-500 text-purple-500 hover:bg-purple-50 dark:hover:bg-purple-950 px-8 py-6 modern-button-hover"
-              onClick={openCalendly}
-            >
-              Get Custom Quote
-            </Button>
-          </div>
+          <AnimatedSection animationType="slideUp">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+              Ready to Accelerate Your Growth?
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              Join hundreds of businesses that have transformed their results with our AI-enhanced solutions.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg"
+                className="defy-gradient hover:shadow-lg hover:shadow-purple-500/25 px-8 py-6 transition-all duration-300"
+                onClick={openCalendly}
+              >
+                Book Free Consultation
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-purple-500 text-purple-500 hover:bg-purple-50 dark:hover:bg-purple-950 px-8 py-6 hover:shadow-lg transition-all duration-300"
+                onClick={openCalendly}
+              >
+                Get Custom Quote
+              </Button>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
     </div>

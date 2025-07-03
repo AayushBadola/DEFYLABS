@@ -60,7 +60,7 @@ const ProjectsSection = () => {
   return (
     <section className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection animationType="slideDown">
+        <AnimatedSection animationType="slideUp">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
               Featured <AIPrecisionText>Projects</AIPrecisionText>
@@ -75,16 +75,17 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <AnimatedSection
               key={project.title}
-              animationType={index % 2 === 0 ? 'slideLeft' : 'slideRight'}
-              delay={index * 0.2}
-              duration={0.8}
+              animationType="slideUp"
+              delay={index * 0.1}
+              duration={0.6}
             >
-              <Card className="group service-card-hover transition-all duration-700 border-0 overflow-hidden">
+              <Card className="group hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 border-0 overflow-hidden hover:-translate-y-2">
                 <div className="relative overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={project.title}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-all duration-500"
+                    loading="lazy"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20 group-hover:opacity-30 transition-opacity duration-300`}></div>
                   <div className="absolute top-4 right-4">
