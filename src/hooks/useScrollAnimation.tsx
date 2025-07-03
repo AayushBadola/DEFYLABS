@@ -1,5 +1,10 @@
 
 import { useEffect, useRef, useState } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 interface UseScrollAnimationOptions {
   threshold?: number;
@@ -16,31 +21,60 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
     const element = elementRef.current;
     if (!element) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          
-          // Set animation complete after animation duration
-          setTimeout(() => {
-            setAnimationComplete(true);
-          }, 1500); // Match the animation duration
-          
-          if (triggerOnce) {
-            observer.unobserve(element);
-          }
-        } else if (!triggerOnce) {
-          setIsVisible(false);
-          setAnimationComplete(false);
+    // GSAP Timeline for complex animations
+    const tl = gsap.timeline({ paused: true });
+    
+    // Initial state
+    gsap.set(element, {
+      x: -100,
+      opacity: 0,
+      scale: 0.8,
+    });
+
+    // Animation sequence
+    tl.to(element, {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      duration: 1.2,
+      ease: "power3.out",
+      onComplete: () => {
+        setAnimationComplete(true);
+      }
+    })
+    .to(element, {
+      backgroundPosition: "200% center",
+      duration: 2,
+      ease: "power2.inOut",
+      repeat: -1,
+      yoyo: true
+    }, "-=0.5");
+
+    // ScrollTrigger setup
+    ScrollTrigger.create({
+      trigger: element,
+      start: "top 80%",
+      onEnter: () => {
+        setIsVisible(true);
+        tl.play();
+        
+        if (triggerOnce) {
+          ScrollTrigger.getById('ai-precision-trigger')?.kill();
         }
       },
-      { threshold }
-    );
-
-    observer.observe(element);
+      onLeave: () => {
+        if (!triggerOnce) {
+          setIsVisible(false);
+          setAnimationComplete(false);
+          tl.pause().progress(0);
+        }
+      },
+      id: 'ai-precision-trigger'
+    });
 
     return () => {
-      observer.unobserve(element);
+      tl.kill();
+      ScrollTrigger.getById('ai-precision-trigger')?.kill();
     };
   }, [threshold, triggerOnce]);
 

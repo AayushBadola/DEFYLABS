@@ -16,10 +16,17 @@ const AIPrecisionText: React.FC<AIPrecisionTextProps> = ({
     <span 
       ref={elementRef}
       className={`
-        ${isVisible ? 'ai-precision-scroll-trigger' : 'ai-precision-initial'}
-        ${animationComplete ? 'ai-precision-final' : ''}
+        inline-block font-extrabold letter-spacing-tight
+        bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600
+        bg-clip-text text-transparent bg-size-200
+        ${animationComplete ? 'gsap-animation-complete' : 'gsap-animation-initial'}
         ${className}
       `}
+      style={{
+        backgroundSize: '200% 200%',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+      }}
     >
       {children}
     </span>
